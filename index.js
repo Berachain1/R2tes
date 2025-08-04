@@ -17,11 +17,8 @@ const wallet_address = initialWallet.address;
 
 const NETWORK_CHANNEL_IDS = {
   "Sepolia": "1339883019556749395",
-  "Arbitrum Sepolia": "1364457925632065620",
-  "Plume": "1364457608962117774",
-  "BSC": "1372399850339045488",
-  "Monad": "1367156681154236467",
-  "Base Sepolia": "1374560325059350538"
+  "Pharos": "1395349206947987456",
+  "Monad": "1367156681154236467"
 };
 
 const SEPOLIA_CONFIG = {
@@ -29,49 +26,37 @@ const SEPOLIA_CONFIG = {
   USDC_ADDRESS: process.env.USDC_ADDRESS,
   R2USD_ADDRESS: process.env.R2USD_ADDRESS,
   sR2USD_ADDRESS: process.env.sR2USD_ADDRESS,
-  ROUTER_USDC_TO_R2USD: "0x20c54C5F742F123Abb49a982BFe0af47edb38756",
-  ROUTER_R2USD_TO_USDC: "0x07aBD582Df3D3472AA687A0489729f9F0424b1e3",
-  STAKING_CONTRACT: "0xBD6b25c4132F09369C354beE0f7be777D7d434fa",
-  LP_R2USD_sR2USD: "0x61F2AB7B0C0E10E18a3ed1C3bC7958540374A8DC",
-  LP_USDC_R2USD: "0x07aBD582Df3D3472AA687A0489729f9F0424b1e3",
+  ROUTER_USDC_TO_R2USD: "0x9e8FF356D35a2Da385C546d6Bf1D77ff85133365",
+  ROUTER_R2USD_TO_USDC: "0x47d1B0623bB3E557bF8544C159c9ae51D091F8a2",
+  STAKING_CONTRACT: "0x006CbF409CA275bA022111dB32BDAE054a97d488",
+  LP_R2USD_sR2USD: "0xe85A06C238439F981c90b2C91393b2F3c46e27FC",
+  LP_USDC_R2USD: "0x47d1B0623bB3E557bF8544C159c9ae51D091F8a2",
   NETWORK_NAME: "Sepolia Testnet"
 };
 
-const ARBITRUM_SEPOLIA_CONFIG = {
-  RPC_URL: process.env.ARBITRUM_SEPOLIA_RPC_URL,
-  USDC_ADDRESS: process.env.ARBITRUM_SEPOLIA_USDC_ADDRESS,
-  R2USD_ADDRESS: process.env.ARBITRUM_SEPOLIA_R2USD_ADDRESS,
-  sR2USD_ADDRESS: process.env.ARBITRUM_SEPOLIA_sR2USD_ADDRESS,
-  ROUTER_USDC_TO_R2USD: "0x20c54C5F742F123Abb49a982BFe0af47edb38756",
-  ROUTER_R2USD_TO_USDC: "0xCcE6bfcA2558c15bB5faEa7479A706735Aef9634",
-  STAKING_CONTRACT: "0x6b9573B7dB7fB98Ff4014ca8E71F57aB7B7ffDFB",
-  LP_R2USD_sR2USD: "0x58F68180a997dA6F9b1af78aa616d8dFe46F2531",
-  LP_USDC_R2USD: "0xCcE6bfcA2558c15bB5faEa7479A706735Aef9634",
-  NETWORK_NAME: "Arbitrum Sepolia Testnet"
+const SEPOLIA_R2_CONFIG  = {
+  RPC_URL: process.env.RPC_URL,
+  R2_ADDRESS: process.env.R2_ADDRESS,
+  USDC_ADDRESS: process.env.USDC_ADDRESS,
+  R2USD_ADDRESS: process.env.R2_R2USD_ADDRESS,
+  ROUTER_USDC_TO_R2USD: "0xeE567Fe1712Faf6149d80dA1E6934E354124CfE3",
+  ROUTER_R2USD_TO_USDC: "0xeE567Fe1712Faf6149d80dA1E6934E354124CfE3",
+  ROUTER_ADDRESS: "0xeE567Fe1712Faf6149d80dA1E6934E354124CfE3",
+  LP_R2_R2USD: "0x9Ae18109692b43e95Ae6BE5350A5Acc5211FE9a1", 
+  LP_USDC_R2: "0xCdfDD7dD24bABDD05A2ff4dfcf06384c5Ad661a9", 
+  NETWORK_NAME: "Sepolia R2 Testnet"
 };
 
-const PLUME_CONFIG = {
-  RPC_URL: process.env.PLUME_RPC_URL,
-  USDC_ADDRESS: process.env.PLUME_USDC_ADDRESS,
-  R2USD_ADDRESS: process.env.PLUME_R2USD_ADDRESS,
-  sR2USD_ADDRESS: process.env.PLUME_sR2USD_ADDRESS,
-  ROUTER_USDC_TO_R2USD: "0x20c54C5F742F123Abb49a982BFe0af47edb38756",
-  ROUTER_R2USD_TO_USDC: "0x726cD35eE1AcE22e31ae51021A06DD24745D7f45",
-  STAKING_CONTRACT: "0xBD6b25c4132F09369C354beE0f7be777D7d434fa",
-  LP_R2USD_sR2USD: "0x5DfEC10AE4EFdCBA51251F87949ae70fC6a36B5B",
-  LP_USDC_R2USD: "0x726cD35eE1AcE22e31ae51021A06DD24745D7f45",
-  NETWORK_NAME: "Plume Network"
-};
 
-const BSC_CONFIG = {
-  RPC_URL: process.env.BSC_RPC_URL,
-  USDC_ADDRESS: process.env.BSC_USDC_ADDRESS,
-  R2USD_ADDRESS: process.env.BSC_R2USD_ADDRESS,
-  sR2USD_ADDRESS: process.env.BSC_sR2USD_ADDRESS,
-  ROUTER_USDC_TO_R2USD: "0x20c54C5F742F123Abb49a982BFe0af47edb38756",
-  ROUTER_R2USD_TO_USDC: "0x20c54C5F742F123Abb49a982BFe0af47edb38756",
-  STAKING_CONTRACT: "0xBD6b25c4132F09369C354beE0f7be777D7d434fa",
-  NETWORK_NAME: "BSC Network"
+const PHRS_CONFIG = {
+  RPC_URL: process.env.PHAROS_RPC_URL,
+  USDC_ADDRESS: process.env.PHAROS_USDC_ADDRESS,
+  R2USD_ADDRESS: process.env.PHAROS_R2USD_ADDRESS,
+  sR2USD_ADDRESS: process.env.PHAROS_sR2USD_ADDRESS,
+  ROUTER_USDC_TO_R2USD: "0x4f5b54d4AF2568cefafA73bB062e5d734b55AA05",
+  ROUTER_R2USD_TO_USDC: "0x4f5b54d4AF2568cefafA73bB062e5d734b55AA05",
+  STAKING_CONTRACT: "0xF8694d25947A0097CB2cea2Fc07b071Bdf72e1f8",
+  NETWORK_NAME: "Pharos Network"
 };
 
 const MONAD_CONFIG = {
@@ -79,22 +64,16 @@ const MONAD_CONFIG = {
   USDC_ADDRESS: process.env.MONAD_USDC_ADDRESS,
   R2USD_ADDRESS: process.env.MONAD_R2USD_ADDRESS,
   sR2USD_ADDRESS: process.env.MONAD_sR2USD_ADDRESS,
-  ROUTER_USDC_TO_R2USD: "0x20c54C5F742F123Abb49a982BFe0af47edb38756",
-  ROUTER_R2USD_TO_USDC: "0x20c54C5F742F123Abb49a982BFe0af47edb38756",
-  STAKING_CONTRACT: "0xBD6b25c4132F09369C354beE0f7be777D7d434fa",
+  ROUTER_USDC_TO_R2USD: "0x4f5b54d4AF2568cefafA73bB062e5d734b55AA05",
+  ROUTER_R2USD_TO_USDC: "0x4f5b54d4AF2568cefafA73bB062e5d734b55AA05",
+  STAKING_CONTRACT: "0xF8694d25947A0097CB2cea2Fc07b071Bdf72e1f8",
+  LP_R2USD_sR2USD_BAL: "0xF472a0de13BdC08907937Acf5E35dA9fCCAa18C4",
+  LP_USDC_R2USD_BAL: "0x425cDE58dd27BD6C5Ca2dD345230A0b332Bb8e71",
+  LP_R2USD_sR2USD: "0xfB8e1C3b833f9E67a71C859a132cf783b645e436",
+  LP_USDC_R2USD: "0xfB8e1C3b833f9E67a71C859a132cf783b645e436",
   NETWORK_NAME: "Monad Network"
 };
 
-const BASE_SEPOLIA_CONFIG = {
-  RPC_URL: process.env.BASE_SEPOLIA_RPC_URL,
-  USDC_ADDRESS: process.env.BASE_SEPOLIA_USDC_ADDRESS,
-  R2USD_ADDRESS: process.env.BASE_SEPOLIA_R2USD_ADDRESS,
-  sR2USD_ADDRESS: process.env.BASE_SEPOLIA_sR2USD_ADDRESS,
-  ROUTER_USDC_TO_R2USD: "0x20c54C5F742F123Abb49a982BFe0af47edb38756",
-  ROUTER_R2USD_TO_USDC: "0x20c54C5F742F123Abb49a982BFe0af47edb38756",
-  STAKING_CONTRACT: "0xBD6b25c4132F09369C354beE0f7be777D7d434fa",
-  NETWORK_NAME: "Base Sepolia Testnet"
-};
 
 const DEBUG_MODE = false;
 
@@ -176,10 +155,43 @@ const LP_USDC_R2USD_ABI = [
   }
 ];
 
+const UNISWAP_V2_LP_ABI = [
+  {
+    "constant": false,
+    "inputs": [
+      {"name": "tokenA", "type": "address"},
+      {"name": "tokenB", "type": "address"},
+      {"name": "amountADesired", "type": "uint256"},
+      {"name": "amountBDesired", "type": "uint256"},
+      {"name": "amountAMin", "type": "uint256"},
+      {"name": "amountBMin", "type": "uint256"},
+      {"name": "to", "type": "address"},
+      {"name": "deadline", "type": "uint256"}
+    ],
+    "name": "addLiquidity",
+    "outputs": [
+      {"name": "amountA", "type": "uint256"},
+      {"name": "amountB", "type": "uint256"},
+      {"name": "liquidity", "type": "uint256"}
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+];
+
 const randomAmountRanges = {
   "SWAP_R2USD_USDC": {
     USDC: { min: 50, max: 200 },
     R2USD: { min: 50, max: 200 }
+  },
+  "SWAP_R2_USDC": {
+    R2: { min: 50, max: 200 },    
+    USDC: { min: 50, max: 200 }  
+  },
+  "SWAP_R2_R2USD": {
+    R2: { min: 50, max: 200 },    
+    R2USD: { min: 50, max: 200 } 
   }
 };
 
@@ -196,29 +208,18 @@ let walletInfoByNetwork = {
     network: SEPOLIA_CONFIG.NETWORK_NAME,
     status: "Initializing"
   },
-  "Arbitrum Sepolia": {
+  "Sepolia R2": {
     address: "",
     balanceNative: "0.00",
     balanceUsdc: "0.00",
     balanceR2usd: "0.00",
-    balanceSr2usd: "0.00",
-    balanceLpR2usdSr2usd: "0.00",
-    balanceLpUsdcR2usd: "0.00",
-    network: ARBITRUM_SEPOLIA_CONFIG.NETWORK_NAME,
+    balanceR2: "0.00",
+    balanceLpR2R2usd: "0.00",
+    balanceLpUsdcR2: "0.00",
+    network: SEPOLIA_R2_CONFIG.NETWORK_NAME,
     status: "Initializing"
-  },
-  "Plume": {
-    address: "",
-    balanceNative: "0.00",
-    balanceUsdc: "0.00",
-    balanceR2usd: "0.00",
-    balanceSr2usd: "0.00",
-    balanceLpR2usdSr2usd: "0.00",
-    balanceLpUsdcR2usd: "0.00",
-    network: PLUME_CONFIG.NETWORK_NAME,
-    status: "Initializing"
-  },
-  "BSC": {
+  }, 
+  "Pharos": {
     address: "",
     balanceNative: "0.00",
     balanceUsdc: "0.00",
@@ -226,7 +227,7 @@ let walletInfoByNetwork = {
     balanceSr2usd: "0.00",
     balanceLpR2usdSr2usd: "N/A",
     balanceLpUsdcR2usd: "N/A",
-    network: BSC_CONFIG.NETWORK_NAME,
+    network: PHRS_CONFIG.NETWORK_NAME,
     status: "Initializing"
   },
   "Monad": {
@@ -239,17 +240,6 @@ let walletInfoByNetwork = {
     balanceLpUsdcR2usd: "N/A",
     network: MONAD_CONFIG.NETWORK_NAME,
     status: "Initializing"
-  },
-  "Base Sepolia": {
-    address: "",
-    balanceNative: "0.00",
-    balanceUsdc: "0.00",
-    balanceR2usd: "0.00",
-    balanceSr2usd: "0.00",
-    balanceLpR2usdSr2usd: "N/A",
-    balanceLpUsdcR2usd: "N/A",
-    network: BASE_SEPOLIA_CONFIG.NETWORK_NAME,
-    status: "Initializing"
   }
 };
 
@@ -260,34 +250,26 @@ let claimCancelled = false;
 let dailyClaimInterval = null;
 let swapRunningSepolia = false;
 let swapCancelledSepolia = false;
-let swapRunningArbitrum = false;
-let swapCancelledArbitrum = false;
-let swapRunningPlume = false;
-let swapCancelledPlume = false;
-let swapRunningBSC = false;
-let swapCancelledBSC = false;
+let swapRunningSepoliaR2 = false;
+let swapCancelledSepoliaR2 = false;
+let swapRunningPharos = false;
+let swapCancelledPharos = false;
 let swapRunningMonad = false;
 let swapCancelledMonad = false;
-let swapRunningBaseSepolia = false;
-let swapCancelledBaseSepolia = false;
 let globalWallet = null;
 let provider = null;
 let transactionQueue = Promise.resolve();
 let transactionQueueList = [];
 let transactionIdCounter = 0;
 let nextNonceSepolia = null;
-let nextNonceArbitrum = null;
-let nextNoncePlume = null;
-let nextNonceBSC = null;
+let nextNonceSepoliaR2 = null;
+let nextNoncePharos = null;
 let nextNonceMonad = null;
-let nextNonceBaseSepolia = null;
 let swapDirection = {
   "Sepolia": true,
-  "Arbitrum Sepolia": true,
-  "Plume": true,
-  "BSC": true,
-  "Monad": true,
-  "Base Sepolia": true
+  "Sepolia R2": true,
+  "Pharos": true,
+  "Monad": true
 };
 
 function getShortAddress(address) {
@@ -309,7 +291,7 @@ function addLog(message, type, network = currentNetwork) {
   else if (type === "warning") coloredMessage = `{bright-yellow-fg}${message}{/bright-yellow-fg}`;
   else if (type === "debug") coloredMessage = `{bright-magenta-fg}${message}{/bright-magenta-fg}`;
 
-  transactionLogs.push(`{bright-cyan-fg}[{/bright-cyan-fg} {bold}{grey-fg}${timestamp}{/grey-fg}{/bold} {bright-cyan-fg}]{/bright-cyan-fg} {bold}[{grey-fg}${network}{/grey-fg}]{/bold}{bold} ${coloredMessage}{/bold}`);
+  transactionLogs.push(`{bright-cyan-fg}[{/bright-cyan-fg} {bold}{yellow-fg}${timestamp}{/yellow-fg}{/bold} {bright-cyan-fg}]{/bright-cyan-fg} {bold}{bright-cyan-fg}[{/bright-cyan-fg}{magenta-fg}${network}{/magenta-fg}{bright-cyan-fg}]{/bright-cyan-fg}{/bold}{bold} ${coloredMessage}{/bold}`);
   updateLogs();
 }
 
@@ -363,11 +345,9 @@ async function waitWithCancel(delay, type, network) {
       const interval = setInterval(() => {
         if (type === "swap" && (
           (network === "Sepolia" && swapCancelledSepolia) ||
-          (network === "Arbitrum Sepolia" && swapCancelledArbitrum) ||
-          (network === "Plume" && swapCancelledPlume) ||
-          (network === "BSC" && swapCancelledBSC) ||
-          (network === "Monad" && swapCancelledMonad) ||
-          (network === "Base Sepolia" && swapCancelledBaseSepolia)
+          (network === "Sepolia R2" && swapCancelledSepoliaR2) ||
+          (network === "Pharos" && swapCancelledPharos) ||
+          (network === "Monad" && swapCancelledMonad)
         )) {
           clearInterval(interval);
           resolve();
@@ -401,21 +381,15 @@ async function addTransactionToQueue(transactionFunction, description = "Transak
       if (normalizedNetwork === "Sepolia" || normalizedNetwork === "Sepolia Testnet") {
         config = SEPOLIA_CONFIG;
         normalizedNetwork = "Sepolia";
-      } else if (normalizedNetwork === "Arbitrum Sepolia" || normalizedNetwork === "Arbitrum Sepolia Testnet") {
-        config = ARBITRUM_SEPOLIA_CONFIG;
-        normalizedNetwork = "Arbitrum Sepolia";
-      } else if (normalizedNetwork === "Plume" || normalizedNetwork === "Plume Network") {
-        config = PLUME_CONFIG;
-        normalizedNetwork = "Plume";
-      } else if (normalizedNetwork === "BSC" || normalizedNetwork === "BSC Network") {
-        config = BSC_CONFIG;
-        normalizedNetwork = "BSC";
+      } else if (normalizedNetwork === "Sepolia R2" || normalizedNetwork === "Sepolia R2 Testnet") {
+        config = SEPOLIA_R2_CONFIG;
+        normalizedNetwork = "Sepolia R2";
+      } else if (normalizedNetwork === "Pharos" || normalizedNetwork === "Pharos Network") {
+        config = PHRS_CONFIG;
+        normalizedNetwork = "Pharos";
       } else if (normalizedNetwork === "Monad" || normalizedNetwork === "Monad Network") {
         config = MONAD_CONFIG;
         normalizedNetwork = "Monad";
-      } else if (normalizedNetwork === "Base Sepolia" || normalizedNetwork === "Base Sepolia Testnet") {
-        config = BASE_SEPOLIA_CONFIG;
-        normalizedNetwork = "Base Sepolia";
       } else {
         throw new Error(`Jaringan tidak dikenal: ${normalizedNetwork || 'tidak diberikan'}`);
       }
@@ -431,31 +405,21 @@ async function addTransactionToQueue(transactionFunction, description = "Transak
           nextNonceSepolia = await localProvider.getTransactionCount(localWallet.address, "pending");
         }
         nextNonce = nextNonceSepolia;
-      } else if (normalizedNetwork === "Arbitrum Sepolia") {
-        if (nextNonceArbitrum === null) {
-          nextNonceArbitrum = await localProvider.getTransactionCount(localWallet.address, "pending");
+      } else if (normalizedNetwork === "Sepolia R2") {
+        if (nextNonceSepoliaR2 === null) {
+          nextNonceSepoliaR2 = await localProvider.getTransactionCount(localWallet.address, "pending");
         }
-        nextNonce = nextNonceArbitrum;
-      } else if (normalizedNetwork === "Plume") {
-        if (nextNoncePlume === null) {
-          nextNoncePlume = await localProvider.getTransactionCount(localWallet.address, "pending");
+        nextNonce = nextNonceSepoliaR2;
+      } else if (normalizedNetwork === "Pharos") {
+        if (nextNoncePharos === null) {
+          nextNoncePharos = await localProvider.getTransactionCount(localWallet.address, "pending");
         }
-        nextNonce = nextNoncePlume;
-      } else if (normalizedNetwork === "BSC") {
-        if (nextNonceBSC === null) {
-          nextNonceBSC = await localProvider.getTransactionCount(localWallet.address, "pending");
-        }
-        nextNonce = nextNonceBSC;
+        nextNonce = nextNoncePharos;
       } else if (normalizedNetwork === "Monad") {
         if (nextNonceMonad === null) {
           nextNonceMonad = await localProvider.getTransactionCount(localWallet.address, "pending");
         }
         nextNonce = nextNonceMonad;
-      } else if (normalizedNetwork === "Base Sepolia") {
-        if (nextNonceBaseSepolia === null) {
-          nextNonceBaseSepolia = await localProvider.getTransactionCount(localWallet.address, "pending");
-        }
-        nextNonce = nextNonceBaseSepolia;
       }
 
       const tx = await transactionFunction(nextNonce, localWallet, localProvider, config);
@@ -463,11 +427,9 @@ async function addTransactionToQueue(transactionFunction, description = "Transak
       addLog(`Transaksi Dikirim. Hash: ${getShortHash(txHash)}`, "warning", normalizedNetwork);
       const receipt = await tx.wait();
       if (normalizedNetwork === "Sepolia") nextNonceSepolia++;
-      else if (normalizedNetwork === "Arbitrum Sepolia") nextNonceArbitrum++;
-      else if (normalizedNetwork === "Plume") nextNoncePlume++;
-      else if (normalizedNetwork === "BSC") nextNonceBSC++;
+      else if (normalizedNetwork === "Sepolia R2") nextNonceSepoliaR2++;
+      else if (normalizedNetwork === "Pharos") nextNoncePharos++;
       else if (normalizedNetwork === "Monad") nextNonceMonad++;
-      else if (normalizedNetwork === "Base Sepolia") nextNonceBaseSepolia++;
 
       if (receipt.status === 1) {
         updateTransactionStatus(transactionId, "completed");
@@ -486,19 +448,15 @@ async function addTransactionToQueue(transactionFunction, description = "Transak
       addLog(`Transaksi [${transactionId}] gagal: ${errorMessage}`, "error", network || currentNetwork);
       if (error.message.includes("nonce has already been used")) {
         if (normalizedNetwork === "Sepolia") nextNonceSepolia++;
-        else if (normalizedNetwork === "Arbitrum Sepolia") nextNonceArbitrum++;
-        else if (normalizedNetwork === "Plume") nextNoncePlume++;
-        else if (normalizedNetwork === "BSC") nextNonceBSC++;
+        else if (normalizedNetwork === "Sepolia R2") nextNonceSepoliaR2++;
+        else if (normalizedNetwork === "Pharos") nextNoncePharos++;
         else if (normalizedNetwork === "Monad") nextNonceMonad++;
-        else if (normalizedNetwork === "Base Sepolia") nextNonceBaseSepolia++;
       } else if (error.message.includes("nonce too high")) {
         const currentNonce = await localProvider.getTransactionCount(localWallet.address, "pending");
         if (normalizedNetwork === "Sepolia") nextNonceSepolia = currentNonce;
-        else if (normalizedNetwork === "Arbitrum Sepolia") nextNonceArbitrum = currentNonce;
-        else if (normalizedNetwork === "Plume") nextNoncePlume = currentNonce;
-        else if (normalizedNetwork === "BSC") nextNonceBSC = currentNonce;
+        else if (normalizedNetwork === "Sepolia R2") nextNonceSepoliaR2 = currentNonce;
+        else if (normalizedNetwork === "Pharos") nextNoncePharos = currentNonce;
         else if (normalizedNetwork === "Monad") nextNonceMonad = currentNonce;
-        else if (normalizedNetwork === "Base Sepolia") nextNonceBaseSepolia = currentNonce;
       }
       return null;
     } finally {
@@ -535,16 +493,16 @@ async function claimAllFaucetsWithDelay(network, { isDailyClaim = false } = {}) 
 
   claimRunning = false;
   if (isDailyClaim) {
-    addLog("Daily Claim Faucet selesai, menunggu 24 jam untuk Looping.", "swap", network);
+    addLog("Auto Daily Claim Faucet selesai, menunggu 24 jam untuk Looping.", "swap", network);
   } else {
-    addLog("Claim Faucet selesai.", "success", network);
+    addLog("Auto Claim Faucet selesai.", "success", network);
   }  claimFaucetSubMenu.setItems(getClaimFaucetSubMenuItems());
   safeRender();
 }
 
 function startAutoDailyClaim() {
   if (dailyClaimInterval) {
-    addLog("Daily Claim Faucet All Network sudah berjalan.", "warning");
+    addLog("Auto Daily Claim Faucet All Network sudah berjalan.", "warning");
     return;
   }
   dailyClaimInterval = setInterval(() => {
@@ -553,7 +511,7 @@ function startAutoDailyClaim() {
     }
   },86400000);
   claimAllFaucetsWithDelay();
-  addLog("Daily Claim Faucet All Network dimulai.", "system");
+  addLog("Auto Daily Claim Faucet All Network dimulai.", "system");
   claimFaucetSubMenu.setItems(getClaimFaucetSubMenuItems());
   safeRender();
 }
@@ -562,7 +520,7 @@ function stopAutoDailyClaim(network) {
   if (dailyClaimInterval) {
     clearInterval(dailyClaimInterval);
     dailyClaimInterval = null;
-    addLog("Daily Claim Faucet All Network dihentikan.", "system", network);
+    addLog("Auto Daily Claim Faucet All Network dihentikan.", "system", network);
   }
   if (claimRunning) {
     claimCancelled = true;
@@ -575,10 +533,10 @@ function stopAutoDailyClaim(network) {
 async function claimFaucet(network) {
   try {
     if (!DISCORD_TOKEN) {
-      throw new Error("DISCORD_TOKEN tidak ditemukan di .env. tambahkan dulu.");
+      throw new Error("DISCORD_TOKEN tidak ditemukan di .env");
     }
     if (!wallet_address) {
-      throw new Error("Wallet address tidak tersedia. minimal cek privatekey");
+      throw new Error("Wallet address tidak tersedia. Cek .env");
     }
     const channelId = NETWORK_CHANNEL_IDS[network];
     if (!channelId) {
@@ -662,7 +620,7 @@ let queueUpdateInterval = null;
 
 function showTransactionQueueMenu() {
   const container = blessed.box({
-    label: " antrian Transaksi ",
+    label: " Antrian Transaksi ",
     top: "10%",
     left: "center",
     width: "80%",
@@ -757,7 +715,7 @@ const headerBox = blessed.box({
 
 figlet.text("ANNISA".toUpperCase(), { font: "ANSI Shadow" }, (err, data) => {
   if (err) {
-    headerBox.setContent("{center}{bold}Somniaazzahra123{/bold}{/center}");
+    headerBox.setContent("{center}{bold}Annisaazzahra123{/bold}{/center}");
   } else {
     const lines = data.split("\n");
     const half = Math.floor(lines.length / 2);
@@ -782,7 +740,7 @@ const descriptionBox = blessed.box({
 });
 
 const logsBox = blessed.box({
-  label: " Transaction ",
+  label: " Transaction Logs ",
   left: 0,
   border: { type: "line" },
   scrollable: true,
@@ -791,53 +749,51 @@ const logsBox = blessed.box({
   keys: true,
   vi: true,
   tags: true,
-  style: { border: { fg: "pink" }, fg: "white" },
-  scrollbar: { ch: " ", inverse: true, style: { bg: "green" } },
+  style: { border: { fg: "yellow" }, fg: "white" },
+  scrollbar: { ch: " ", inverse: true, style: { bg: "blue" } },
   content: ""
 });
 
 const welcomeBox = blessed.box({
-  label: " JUST INFOOO ",
+  label: " Dashboard ",
   border: { type: "line" },
   tags: true,
-  style: { border: { fg: "cyan" }, fg: "red", bg: "default" },
+  style: { border: { fg: "cyan" }, fg: "white", bg: "default" },
   content: "{center}{bold}Initializing...{/bold}{/center}"
 });
 
 const walletBox = blessed.box({
-  label: " Detail Wallet ",
+  label: " Informasi Wallet ",
   border: { type: "line" },
   tags: true,
-  style: { border: { fg: "magenta" }, fg: "pink", bg: "default" },
+  style: { border: { fg: "magenta" }, fg: "white", bg: "default" },
   content: "Loading data wallet..."
 });
 
 walletBox.hide();
 
 const mainMenu = blessed.list({
-  label: " Menu untuk transaksi ",
+  label: " Menu ",
   left: "60%",
   keys: true,
   vi: true,
   mouse: true,
   border: { type: "line" },
-  style: { fg: "white", bg: "default", border: { fg: "pink" }, selected: { bg: "green", fg: "black" } },
+  style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "green", fg: "black" } },
   items: getMainMenItems()
 });
 
 function getMainMenItems() {
   let items = [];
-  if (swapRunningSepolia || swapRunningArbitrum || swapRunningPlume || swapRunningBSC || swapRunningMonad || swapRunningBaseSepolia) items.push("Stop All Transaction");
+  if (swapRunningSepolia || swapRunningSepoliaR2 || swapRunningPharos || swapRunningMonad) items.push("Stop All Transaction");
   items = items.concat([
     "Sepolia Network",
-    "Arbitrum Sepolia Network",
-    "Plume Network",
-    "BSC Network",
+    "Sepolia R2 Network",
+    "Pharos Network",
     "Monad Network",
-    "Base Sepolia Network",
     "Claim Faucet",
     "Antrian Transaksi",
-    "Clear Transaction",
+    "Clear Transaction Logs",
     "Refresh",
     "Exit"
   ]);
@@ -848,62 +804,45 @@ function getSepoliaSubMenuItems() {
   let items = [];
   if (swapRunningSepolia) items.push("Stop Transaction");
   items = items.concat([
-    "Swap R2USD & USDC",
-    "Stake R2USD & sR2USD",
-    "Add LP R2USD & sR2USD",
-    "Add LP USDC & R2USD",
-    "tes Manual Swap",
+    "Auto Swap R2USD & USDC",
+    "Auto Stake R2USD & sR2USD",
+    "Auto Add LP R2USD & sR2USD",
+    "Auto Add LP USDC & R2USD",
+    "Manual Swap",
     "Change Random Amount",
-    "Clear Transaction",
+    "Clear Transaction Logs",
     "Back To Main Menu",
     "Refresh"
   ]);
   return items;
 }
 
-function getArbitrumSepoliaSubMenuItems() {
+function getSepoliaR2SubMenuItems() {
   let items = [];
-  if (swapRunningArbitrum) items.push("Stop Transaction");
+  if (swapRunningSepoliaR2) items.push("Stop Transaction");
   items = items.concat([
-    "Swap R2USD & USDC",
-    "Stake R2USD & sR2USD",
-    "Add LP R2USD & sR2USD",
-    "Add LP USDC & R2USD",
-    "tes Manual Swap",
+    "Auto Swap R2 & USDC",
+    "Auto Swap R2 & R2USD",
+    "Auto Add LP R2 & USDC", 
+    "Auto Add LP R2 & R2USD",
+    "Manual Swap",
     "Change Random Amount",
-    "Clear Transaction",
+    "Clear Transaction Logs",
     "Back To Main Menu",
     "Refresh"
   ]);
   return items;
 }
 
-function getPlumeSubMenuItems() {
+function getPharosSubMenuItems() {
   let items = [];
-  if (swapRunningPlume) items.push("Stop Transaction");
+  if (swapRunningPharos) items.push("Stop Transaction");
   items = items.concat([
-    "Swap R2USD & USDC",
-    "Stake R2USD & sR2USD",
-    "Add LP R2USD & sR2USD",
-    "Add LP USDC & R2USD",
-    "tes Manual Swap",
+    "Auto Swap R2USD & USDC",
+    "Auto Stake R2USD & sR2USD",
+    "Manual Swap",
     "Change Random Amount",
-    "Clear Transaction",
-    "Back To Main Menu",
-    "Refresh"
-  ]);
-  return items;
-}
-
-function getBscSubMenuItems() {
-  let items = [];
-  if (swapRunningBSC) items.push("Stop Transaction");
-  items = items.concat([
-    "Swap R2USD & USDC",
-    "Stake R2USD & sR2USD",
-    "tes Manual Swap",
-    "Change Random Amount",
-    "Clear Transaction",
+    "Clear Transaction Logs",
     "Back To Main Menu",
     "Refresh"
   ]);
@@ -914,43 +853,29 @@ function getMonadSubMenuItems() {
   let items = [];
   if (swapRunningMonad) items.push("Stop Transaction");
   items = items.concat([
-    "Swap R2USD & USDC",
-    "Stake R2USD & sR2USD",
-    "tes Manual Swap",
+    "Auto Swap R2USD & USDC",
+    "Auto Stake R2USD & sR2USD",
+    "Auto Add LP R2USD & sR2USD",  
+    "Auto Add LP USDC & R2USD",    
+    "Manual Swap",
     "Change Random Amount",
-    "Clear Transaction",
+    "Clear Transaction Logs",
     "Back To Main Menu",
     "Refresh"
   ]);
   return items;
 }
 
-function getBaseSepoliaSubMenuItems() {
-  let items = [];
-  if (swapRunningBaseSepolia) items.push("Stop Transaction");
-  items = items.concat([
-    "Swap R2USD & USDC",
-    "Stake R2USD & sR2USD",
-    "tes Manual Swap",
-    "Change Random Amount",
-    "Clear Transaction",
-    "Back To Main Menu",
-    "Refresh"
-  ]);
-  return items;
-}
 
 function getClaimFaucetSubMenuItems() {
   const items = [
-    "Claim Faucet All Network",
-    "Daily Claim Faucet All Network",
+    "Auto Claim Faucet All Network",
+    "Auto Daily Claim Faucet All Network",
     "Claim Faucet Sepolia",
-    "Claim Faucet Arbitrum Sepolia",
-    "Claim Faucet Plume",
-    "Claim Faucet BSC",
+    "Claim Faucet Sepolia R2",
+    "Claim Faucet Pharos",
     "Claim Faucet Monad",
-    "Claim Faucet Base Sepolia",
-    "Clear Transaction",
+    "Clear Transaction Logs",
     "Refresh",
     "Back to Main Menu",
   ];
@@ -966,7 +891,7 @@ function getClaimFaucetSubMenuItems() {
 
 
 const sepoliaSubMenu = blessed.list({
-  label: " Sepolia Network ",
+  label: " Sepolia Network Sub Menu ",
   left: "60%",
   keys: true,
   vi: true,
@@ -978,8 +903,8 @@ const sepoliaSubMenu = blessed.list({
 });
 sepoliaSubMenu.hide();
 
-const arbitrumSepoliaSubMenu = blessed.list({
-  label: " Arbitrum Sepolia Network ",
+const r2SepoliaSubMenu = blessed.list({
+  label: " Sepolia R2 Network Sub Menu ",
   left: "60%",
   keys: true,
   vi: true,
@@ -987,12 +912,12 @@ const arbitrumSepoliaSubMenu = blessed.list({
   tags: true,
   border: { type: "line" },
   style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: getArbitrumSepoliaSubMenuItems()
+  items: getSepoliaR2SubMenuItems()
 });
-arbitrumSepoliaSubMenu.hide();
+r2SepoliaSubMenu.hide();
 
-const plumeSubMenu = blessed.list({
-  label: " Plume Network ",
+const pharosSubMenu = blessed.list({
+  label: " Pharos Network Sub Menu ",
   left: "60%",
   keys: true,
   vi: true,
@@ -1000,25 +925,12 @@ const plumeSubMenu = blessed.list({
   tags: true,
   border: { type: "line" },
   style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: getPlumeSubMenuItems()
+  items: getPharosSubMenuItems()
 });
-plumeSubMenu.hide();
-
-const bscSubMenu = blessed.list({
-  label: " BSC Network ",
-  left: "60%",
-  keys: true,
-  vi: true,
-  mouse: true,
-  tags: true,
-  border: { type: "line" },
-  style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: getBscSubMenuItems()
-});
-bscSubMenu.hide();
+pharosSubMenu.hide();
 
 const monadSubMenu = blessed.list({
-  label: " Monad Network ",
+  label: " Monad Network Sub Menu ",
   left: "60%",
   keys: true,
   vi: true,
@@ -1029,19 +941,6 @@ const monadSubMenu = blessed.list({
   items: getMonadSubMenuItems()
 });
 monadSubMenu.hide();
-
-const baseSepoliaSubMenu = blessed.list({
-  label: " Base Sepolia Network ",
-  left: "60%",
-  keys: true,
-  vi: true,
-  mouse: true,
-  tags: true,
-  border: { type: "line" },
-  style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: getBaseSepoliaSubMenuItems()
-});
-baseSepoliaSubMenu.hide();
 
 const claimFaucetSubMenu = blessed.list({
   label: " Claim Faucet ",
@@ -1057,7 +956,7 @@ const claimFaucetSubMenu = blessed.list({
 claimFaucetSubMenu.hide();
 
 const sepoliaManualSwapSubMenu = blessed.list({
-  label: " tes Manual Swap ",
+  label: " Manual Swap ",
   left: "60%",
   keys: true,
   vi: true,
@@ -1069,8 +968,8 @@ const sepoliaManualSwapSubMenu = blessed.list({
 });
 sepoliaManualSwapSubMenu.hide();
 
-const arbitrumSepoliaManualSwapSubMenu = blessed.list({
-  label: " tes Manual Swap ",
+const r2SepoliaManualSwapSubMenu = blessed.list({
+  label: " Manual Swap ",
   left: "60%",
   keys: true,
   vi: true,
@@ -1078,12 +977,18 @@ const arbitrumSepoliaManualSwapSubMenu = blessed.list({
   tags: true,
   border: { type: "line" },
   style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: ["USDC -> R2USD", "R2USD -> USDC", "Back To Arbitrum Sepolia Network Menu"]
+  items: [
+    "R2 -> USDC",
+    "USDC -> R2",
+    "R2 -> R2USD",
+    "R2USD -> R2",
+    "Back To Sepolia R2 Network Menu"
+  ]
 });
-arbitrumSepoliaManualSwapSubMenu.hide();
+r2SepoliaManualSwapSubMenu.hide();
 
-const plumeManualSwapSubMenu = blessed.list({
-  label: " tes Manual Swap ",
+const pharosManualSwapSubMenu = blessed.list({
+  label: " Manual Swap ",
   left: "60%",
   keys: true,
   vi: true,
@@ -1091,25 +996,12 @@ const plumeManualSwapSubMenu = blessed.list({
   tags: true,
   border: { type: "line" },
   style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: ["USDC -> R2USD", "R2USD -> USDC", "Back To Plume Network Menu"]
+  items: ["USDC -> R2USD", "R2USD -> USDC", "Back To Pharos Network Menu"]
 });
-plumeManualSwapSubMenu.hide();
-
-const bscManualSwapSubMenu = blessed.list({
-  label: " tes Manual Swap ",
-  left: "60%",
-  keys: true,
-  vi: true,
-  mouse: true,
-  tags: true,
-  border: { type: "line" },
-  style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: ["USDC -> R2USD", "R2USD -> USDC", "Back To BSC Network Menu"]
-});
-bscManualSwapSubMenu.hide();
+pharosManualSwapSubMenu.hide();
 
 const monadManualSwapSubMenu = blessed.list({
-  label: " tes Manual Swap ",
+  label: " Manual Swap ",
   left: "60%",
   keys: true,
   vi: true,
@@ -1120,19 +1012,6 @@ const monadManualSwapSubMenu = blessed.list({
   items: ["USDC -> R2USD", "R2USD -> USDC", "Back To Monad Network Menu"]
 });
 monadManualSwapSubMenu.hide();
-
-const baseSepoliaManualSwapSubMenu = blessed.list({
-  label: " tes Manual Swap ",
-  left: "60%",
-  keys: true,
-  vi: true,
-  mouse: true,
-  tags: true,
-  border: { type: "line" },
-  style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: ["USDC -> R2USD", "R2USD -> USDC", "Back To Base Sepolia Network Menu"]
-});
-baseSepoliaManualSwapSubMenu.hide();
 
 const sepoliaChangeRandomAmountSubMenu = blessed.list({
   label: " Change Random Amount ",
@@ -1147,7 +1026,7 @@ const sepoliaChangeRandomAmountSubMenu = blessed.list({
 });
 sepoliaChangeRandomAmountSubMenu.hide();
 
-const arbitrumSepoliaChangeRandomAmountSubMenu = blessed.list({
+const r2SepoliaChangeRandomAmountSubMenu = blessed.list({
   label: " Change Random Amount ",
   left: "60%",
   keys: true,
@@ -1156,11 +1035,11 @@ const arbitrumSepoliaChangeRandomAmountSubMenu = blessed.list({
   tags: true,
   border: { type: "line" },
   style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: ["SWAP_R2USD_USDC", "Back To Arbitrum Sepolia Network Menu"]
+  items: ["SWAP_R2USD_USDC", "Back To Sepolia R2 Network Menu"]
 });
-arbitrumSepoliaChangeRandomAmountSubMenu.hide();
+r2SepoliaChangeRandomAmountSubMenu.hide();
 
-const plumeChangeRandomAmountSubMenu = blessed.list({
+const pharosChangeRandomAmountSubMenu = blessed.list({
   label: " Change Random Amount ",
   left: "60%",
   keys: true,
@@ -1169,22 +1048,9 @@ const plumeChangeRandomAmountSubMenu = blessed.list({
   tags: true,
   border: { type: "line" },
   style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: ["SWAP_R2USD_USDC", "Back To Plume Network Menu"]
+  items: ["SWAP_R2USD_USDC", "Back To Pharos Network Menu"]
 });
-plumeChangeRandomAmountSubMenu.hide();
-
-const bscChangeRandomAmountSubMenu = blessed.list({
-  label: " Change Random Amount ",
-  left: "60%",
-  keys: true,
-  vi: true,
-  mouse: true,
-  tags: true,
-  border: { type: "line" },
-  style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: ["SWAP_R2USD_USDC", "Back To BSC Network Menu"]
-});
-bscChangeRandomAmountSubMenu.hide();
+pharosChangeRandomAmountSubMenu.hide();
 
 const monadChangeRandomAmountSubMenu = blessed.list({
   label: " Change Random Amount ",
@@ -1198,19 +1064,6 @@ const monadChangeRandomAmountSubMenu = blessed.list({
   items: ["SWAP_R2USD_USDC", "Back To Monad Network Menu"]
 });
 monadChangeRandomAmountSubMenu.hide();
-
-const baseSepoliaChangeRandomAmountSubMenu = blessed.list({
-  label: " Change Random Amount ",
-  left: "60%",
-  keys: true,
-  vi: true,
-  mouse: true,
-  tags: true,
-  border: { type: "line" },
-  style: { fg: "white", bg: "default", border: { fg: "red" }, selected: { bg: "cyan", fg: "black" } },
-  items: ["SWAP_R2USD_USDC", "Back To Base Sepolia Network Menu"]
-});
-baseSepoliaChangeRandomAmountSubMenu.hide();
 
 const promptBox = blessed.prompt({
   parent: screen,
@@ -1234,38 +1087,34 @@ screen.append(welcomeBox);
 screen.append(walletBox);
 screen.append(mainMenu);
 screen.append(sepoliaSubMenu);
-screen.append(arbitrumSepoliaSubMenu);
-screen.append(plumeSubMenu);
-screen.append(bscSubMenu);
+screen.append(r2SepoliaSubMenu);
+screen.append(pharosSubMenu);
 screen.append(monadSubMenu);
-screen.append(baseSepoliaSubMenu);
 screen.append(claimFaucetSubMenu);
 screen.append(sepoliaManualSwapSubMenu);
-screen.append(arbitrumSepoliaManualSwapSubMenu);
-screen.append(plumeManualSwapSubMenu);
-screen.append(bscManualSwapSubMenu);
+screen.append(r2SepoliaManualSwapSubMenu);
+screen.append(pharosManualSwapSubMenu);
 screen.append(monadManualSwapSubMenu);
-screen.append(baseSepoliaManualSwapSubMenu);
 screen.append(sepoliaChangeRandomAmountSubMenu);
-screen.append(arbitrumSepoliaChangeRandomAmountSubMenu);
-screen.append(plumeChangeRandomAmountSubMenu);
-screen.append(bscChangeRandomAmountSubMenu);
+screen.append(r2SepoliaChangeRandomAmountSubMenu);
+screen.append(pharosChangeRandomAmountSubMenu);
 screen.append(monadChangeRandomAmountSubMenu);
-screen.append(baseSepoliaChangeRandomAmountSubMenu);
 
 function updateWelcomeBox() {
   const currentTime = new Date().toLocaleString("en-US", { timeZone: "Asia/Jakarta" });
-  const botVersion = "V2.0.1";
+  const botVersion = "V2.1.0";
 
   const content =
-  `{center}{bold}{bright-red-fg}[:: R2 :: Test :: BOT ::]{/bright-red-fg}{/bold}{/center}\n\n` +
-  `{center}{bold}{bright-yellow-fg}Version : ${botVersion}{/bright-yellow-fg}{/bold}{/center}\n` +
-  `{center}{bold}{bright-cyan-fg}➥ Join Telegram : t.me/AIRDROPRSIND123{/bright-cyan-fg}{/bold}{/center}\n` +
-  `{center}{bold}{bright-cyan-fg}➥  Follow My New X : @Annisacryptoone{/bright-cyan-fg}{/bold}{/center}\n` +
-  `{center}{bold}{bright-cyan-fg}➥ Contact Telegram : @Annisaazzahra123{/bright-cyan-fg}{/bold}{/center}\n`;
+    `{center}{bold}{bright-red-fg}********************{/bright-red-fg}{/bold}{/center}\n` +
+    `{center}{bold}{bright-red-fg}*  R2 TESTNET  *{/bright-red-fg}{/bold}{/center}\n` +
+    `{center}{bold}{bright-red-fg}********************{/bright-red-fg}{/bold}{/center}\n\n` +
+    `{center}{bold}{bright-yellow-fg}Version : ${botVersion}{/bright-yellow-fg}{/bold}{/center}\n` +
+    `{center}{bold}{bright-cyan-fg}➥ my contact : t.me/Annisaazzahra123{/bright-cyan-fg}{/bold}{/center}\n` +
+    `{center}{bold}{bright-cyan-fg}➥ follow my X : https://x.com/Annisacryptoone{/bright-cyan-fg}{/bold}{/center}\n` +
+    `{center}{bold}{green-fg}Donate : 082137638057 [DANA]{/green-fg}{/bold}{/center}\n`;
 
-welcomeBox.setContent(content);
-safeRender();
+  welcomeBox.setContent(content);
+  safeRender();
 }
 
 function adjustLayout() {
@@ -1297,26 +1146,18 @@ function adjustLayout() {
   sepoliaSubMenu.left = mainMenu.left;
   sepoliaSubMenu.width = mainMenu.width;
   sepoliaSubMenu.height = mainMenu.height;
-  arbitrumSepoliaSubMenu.top = mainMenu.top;
-  arbitrumSepoliaSubMenu.left = mainMenu.left;
-  arbitrumSepoliaSubMenu.width = mainMenu.width;
-  arbitrumSepoliaSubMenu.height = mainMenu.height;
-  plumeSubMenu.top = mainMenu.top;
-  plumeSubMenu.left = mainMenu.left;
-  plumeSubMenu.width = mainMenu.width;
-  plumeSubMenu.height = mainMenu.height;
-  bscSubMenu.top = mainMenu.top;
-  bscSubMenu.left = mainMenu.left;
-  bscSubMenu.width = mainMenu.width;
-  bscSubMenu.height = mainMenu.height;
+  r2SepoliaSubMenu.top = mainMenu.top;
+  r2SepoliaSubMenu.left = mainMenu.left;
+  r2SepoliaSubMenu.width = mainMenu.width;
+  r2SepoliaSubMenu.height = mainMenu.height;
+  pharosSubMenu.top = mainMenu.top;
+  pharosSubMenu.left = mainMenu.left;
+  pharosSubMenu.width = mainMenu.width;
+  pharosSubMenu.height = mainMenu.height;
   monadSubMenu.top = mainMenu.top;
   monadSubMenu.left = mainMenu.left;
   monadSubMenu.width = mainMenu.width;
   monadSubMenu.height = mainMenu.height;
-  baseSepoliaSubMenu.top = mainMenu.top;
-  baseSepoliaSubMenu.left = mainMenu.left;
-  baseSepoliaSubMenu.width = mainMenu.width;
-  baseSepoliaSubMenu.height = mainMenu.height;
   claimFaucetSubMenu.top = mainMenu.top;
   claimFaucetSubMenu.left = mainMenu.left;
   claimFaucetSubMenu.width = mainMenu.width;
@@ -1325,50 +1166,34 @@ function adjustLayout() {
   sepoliaManualSwapSubMenu.left = mainMenu.left;
   sepoliaManualSwapSubMenu.width = mainMenu.width;
   sepoliaManualSwapSubMenu.height = mainMenu.height;
-  arbitrumSepoliaManualSwapSubMenu.top = mainMenu.top;
-  arbitrumSepoliaManualSwapSubMenu.left = mainMenu.left;
-  arbitrumSepoliaManualSwapSubMenu.width = mainMenu.width;
-  arbitrumSepoliaManualSwapSubMenu.height = mainMenu.height;
-  plumeManualSwapSubMenu.top = mainMenu.top;
-  plumeManualSwapSubMenu.left = mainMenu.left;
-  plumeManualSwapSubMenu.width = mainMenu.width;
-  plumeManualSwapSubMenu.height = mainMenu.height;
-  bscManualSwapSubMenu.top = mainMenu.top;
-  bscManualSwapSubMenu.left = mainMenu.left;
-  bscManualSwapSubMenu.width = mainMenu.width;
-  bscManualSwapSubMenu.height = mainMenu.height;
+  r2SepoliaManualSwapSubMenu.top = mainMenu.top;
+  r2SepoliaManualSwapSubMenu.left = mainMenu.left;
+  r2SepoliaManualSwapSubMenu.width = mainMenu.width;
+  r2SepoliaManualSwapSubMenu.height = mainMenu.height;
+  pharosManualSwapSubMenu.top = mainMenu.top;
+  pharosManualSwapSubMenu.left = mainMenu.left;
+  pharosManualSwapSubMenu.width = mainMenu.width;
+  pharosManualSwapSubMenu.height = mainMenu.height;
   monadManualSwapSubMenu.top = mainMenu.top;
   monadManualSwapSubMenu.left = mainMenu.left;
   monadManualSwapSubMenu.width = mainMenu.width;
   monadManualSwapSubMenu.height = mainMenu.height;
-  baseSepoliaManualSwapSubMenu.top = mainMenu.top;
-  baseSepoliaManualSwapSubMenu.left = mainMenu.left;
-  baseSepoliaManualSwapSubMenu.width = mainMenu.width;
-  baseSepoliaManualSwapSubMenu.height = mainMenu.height;
   sepoliaChangeRandomAmountSubMenu.top = mainMenu.top;
   sepoliaChangeRandomAmountSubMenu.left = mainMenu.left;
   sepoliaChangeRandomAmountSubMenu.width = mainMenu.width;
   sepoliaChangeRandomAmountSubMenu.height = mainMenu.height;
-  arbitrumSepoliaChangeRandomAmountSubMenu.top = mainMenu.top;
-  arbitrumSepoliaChangeRandomAmountSubMenu.left = mainMenu.left;
-  arbitrumSepoliaChangeRandomAmountSubMenu.width = mainMenu.width;
-  arbitrumSepoliaChangeRandomAmountSubMenu.height = mainMenu.height;
-  plumeChangeRandomAmountSubMenu.top = mainMenu.top;
-  plumeChangeRandomAmountSubMenu.left = mainMenu.left;
-  plumeChangeRandomAmountSubMenu.width = mainMenu.width;
-  plumeChangeRandomAmountSubMenu.height = mainMenu.height;
-  bscChangeRandomAmountSubMenu.top = mainMenu.top;
-  bscChangeRandomAmountSubMenu.left = mainMenu.left;
-  bscChangeRandomAmountSubMenu.width = mainMenu.width;
-  bscChangeRandomAmountSubMenu.height = mainMenu.height;
+  r2SepoliaChangeRandomAmountSubMenu.top = mainMenu.top;
+  r2SepoliaChangeRandomAmountSubMenu.left = mainMenu.left;
+  r2SepoliaChangeRandomAmountSubMenu.width = mainMenu.width;
+  r2SepoliaChangeRandomAmountSubMenu.height = mainMenu.height;
+  pharosChangeRandomAmountSubMenu.top = mainMenu.top;
+  pharosChangeRandomAmountSubMenu.left = mainMenu.left;
+  pharosChangeRandomAmountSubMenu.width = mainMenu.width;
+  pharosChangeRandomAmountSubMenu.height = mainMenu.height;
   monadChangeRandomAmountSubMenu.top = mainMenu.top;
   monadChangeRandomAmountSubMenu.left = mainMenu.left;
   monadChangeRandomAmountSubMenu.width = mainMenu.width;
   monadChangeRandomAmountSubMenu.height = mainMenu.height;
-  baseSepoliaChangeRandomAmountSubMenu.top = mainMenu.top;
-  baseSepoliaChangeRandomAmountSubMenu.left = mainMenu.left;
-  baseSepoliaChangeRandomAmountSubMenu.width = mainMenu.width;
-  baseSepoliaChangeRandomAmountSubMenu.height = mainMenu.height;
   safeRender();
 }
 
@@ -1395,21 +1220,15 @@ async function updateWalletData(network) {
     if (network === "Sepolia" || network === "Sepolia Network" || network === "Sepolia Testnet") {
       config = SEPOLIA_CONFIG;
       normalizedNetwork = "Sepolia";
-    } else if (network === "Arbitrum Sepolia" || network === "Arbitrum Sepolia Network" || network === "Arbitrum Sepolia Testnet") {
-      config = ARBITRUM_SEPOLIA_CONFIG;
-      normalizedNetwork = "Arbitrum Sepolia";
-    } else if (network === "Plume" || network === "Plume Network" || network === "Plume Testnet") {
-      config = PLUME_CONFIG;
-      normalizedNetwork = "Plume";
-    } else if (network === "BSC" || network === "BSC Network") {
-      config = BSC_CONFIG;
-      normalizedNetwork = "BSC";
+    } else if (network === "Sepolia R2" || network === "Sepolia DC R2 Network" || network === "Sepolia R2 Testnet") {
+      config = SEPOLIA_R2_CONFIG;
+      normalizedNetwork = "Sepolia R2";
+    } else if (network === "Pharos" || network === "Pharos Network") {
+      config = PHRS_CONFIG;
+      normalizedNetwork = "Pharos";
     } else if (network === "Monad" || network === "Monad Network") {
       config = MONAD_CONFIG;
       normalizedNetwork = "Monad";
-    } else if (network === "Base Sepolia" || network === "Base Sepolia Network" || network === "Base Sepolia Testnet") {
-      config = BASE_SEPOLIA_CONFIG;
-      normalizedNetwork = "Base Sepolia";
     } else {
       throw new Error(`Jaringan tidak dikenal: ${network || 'tidak diberikan'}`);
     }
@@ -1419,46 +1238,66 @@ async function updateWalletData(network) {
 
     walletInfoByNetwork[normalizedNetwork].address = localWallet.address;
 
-    const [nativeBalance, usdcBalance, r2usdBalance, sr2usdBalance] = await Promise.all([
-      localProvider.getBalance(localWallet.address),
-      getTokenBalance(config.USDC_ADDRESS, localProvider, localWallet),
-      getTokenBalance(config.R2USD_ADDRESS, localProvider, localWallet),
-      getTokenBalance(config.sR2USD_ADDRESS, localProvider, localWallet)
-    ]);
-
-    walletInfoByNetwork[normalizedNetwork].balanceNative = ethers.formatEther(nativeBalance);
-    walletInfoByNetwork[normalizedNetwork].balanceUsdc = usdcBalance;
-    walletInfoByNetwork[normalizedNetwork].balanceR2usd = r2usdBalance;
-    walletInfoByNetwork[normalizedNetwork].balanceSr2usd = sr2usdBalance;
-
-    if (normalizedNetwork !== "BSC" && normalizedNetwork !== "Monad" && normalizedNetwork !== "Base Sepolia") {
-      const [lpR2usdSr2usdBalance, lpUsdcR2usdBalance] = await Promise.all([
-        getTokenBalance(config.LP_R2USD_sR2USD, localProvider, localWallet),
-        getTokenBalance(config.LP_USDC_R2USD, localProvider, localWallet)
+    if (normalizedNetwork === "Sepolia R2") {
+      const [nativeBalance, usdcBalance, r2usdBalance, r2Balance] = await Promise.all([
+        localProvider.getBalance(localWallet.address),
+        getTokenBalance(config.USDC_ADDRESS, localProvider, localWallet),
+        getTokenBalance(config.R2USD_ADDRESS, localProvider, localWallet),
+        getTokenBalance(config.R2_ADDRESS, localProvider, localWallet)
       ]);
-      walletInfoByNetwork[normalizedNetwork].balanceLpR2usdSr2usd = lpR2usdSr2usdBalance;
-      walletInfoByNetwork[normalizedNetwork].balanceLpUsdcR2usd = lpUsdcR2usdBalance;
+      walletInfoByNetwork[normalizedNetwork].balanceNative = ethers.formatEther(nativeBalance);
+      walletInfoByNetwork[normalizedNetwork].balanceUsdc = usdcBalance;
+      walletInfoByNetwork[normalizedNetwork].balanceR2usd = r2usdBalance;
+      walletInfoByNetwork[normalizedNetwork].balanceR2 = r2Balance;
+
+      const [lpR2R2usdBalance, lpUsdcR2Balance] = await Promise.all([
+        getTokenBalance(config.LP_R2_R2USD, localProvider, localWallet),
+        getTokenBalance(config.LP_USDC_R2, localProvider, localWallet)
+      ]);
+      walletInfoByNetwork[normalizedNetwork].balanceLpR2R2usd = lpR2R2usdBalance;
+      walletInfoByNetwork[normalizedNetwork].balanceLpUsdcR2 = lpUsdcR2Balance;
+    } else {
+      const [nativeBalance, usdcBalance, r2usdBalance, sr2usdBalance] = await Promise.all([
+        localProvider.getBalance(localWallet.address),
+        getTokenBalance(config.USDC_ADDRESS, localProvider, localWallet),
+        getTokenBalance(config.R2USD_ADDRESS, localProvider, localWallet),
+        getTokenBalance(config.sR2USD_ADDRESS, localProvider, localWallet)
+      ]);
+      walletInfoByNetwork[normalizedNetwork].balanceNative = ethers.formatEther(nativeBalance);
+      walletInfoByNetwork[normalizedNetwork].balanceUsdc = usdcBalance;
+      walletInfoByNetwork[normalizedNetwork].balanceR2usd = r2usdBalance;
+      walletInfoByNetwork[normalizedNetwork].balanceSr2usd = sr2usdBalance;
+
+      if (normalizedNetwork === "Monad") {  
+        const [lpR2usdSr2usdBalance, lpUsdcR2usdBalance] = await Promise.all([
+          getTokenBalance(config.LP_R2USD_sR2USD_BAL, localProvider, localWallet),
+          getTokenBalance(config.LP_USDC_R2USD_BAL, localProvider, localWallet)
+        ]);
+        walletInfoByNetwork[normalizedNetwork].balanceLpR2usdSr2usd = lpR2usdSr2usdBalance;
+        walletInfoByNetwork[normalizedNetwork].balanceLpUsdcR2usd = lpUsdcR2usdBalance;
+      } else if (normalizedNetwork === "Sepolia") { 
+        const [lpR2usdSr2usdBalance, lpUsdcR2usdBalance] = await Promise.all([
+          getTokenBalance(config.LP_R2USD_sR2USD, localProvider, localWallet),
+          getTokenBalance(config.LP_USDC_R2USD, localProvider, localWallet)
+        ]);
+        walletInfoByNetwork[normalizedNetwork].balanceLpR2usdSr2usd = lpR2usdSr2usdBalance;
+        walletInfoByNetwork[normalizedNetwork].balanceLpUsdcR2usd = lpUsdcR2usdBalance;
+      }
     }
 
     const currentNonce = await localProvider.getTransactionCount(localWallet.address, "pending");
     if (normalizedNetwork === "Sepolia") {
       nextNonceSepolia = currentNonce;
       addLog(`Nonce awal untuk Sepolia: ${nextNonceSepolia}`, "debug", normalizedNetwork);
-    } else if (normalizedNetwork === "Arbitrum Sepolia") {
-      nextNonceArbitrum = currentNonce;
-      addLog(`Nonce awal untuk Arbitrum Sepolia: ${nextNonceArbitrum}`, "debug", normalizedNetwork);
-    } else if (normalizedNetwork === "Plume") {
-      nextNoncePlume = currentNonce;
-      addLog(`Nonce awal untuk Plume: ${nextNoncePlume}`, "debug", normalizedNetwork);
-    } else if (normalizedNetwork === "BSC") {
-      nextNonceBSC = currentNonce;
-      addLog(`Nonce awal untuk BSC: ${nextNonceBSC}`, "debug", normalizedNetwork);
+    } else if (normalizedNetwork === "Sepolia R2") {
+      nextNonceSepoliaR2 = currentNonce;
+      addLog(`Nonce awal untuk Sepolia R2: ${nextNonceSepoliaR2}`, "debug", normalizedNetwork);
+    } else if (normalizedNetwork === "Pharos") {
+      nextNoncePharos = currentNonce;
+      addLog(`Nonce awal untuk Pharos: ${nextNoncePharos}`, "debug", normalizedNetwork);
     } else if (normalizedNetwork === "Monad") {
       nextNonceMonad = currentNonce;
       addLog(`Nonce awal untuk Monad: ${nextNonceMonad}`, "debug", normalizedNetwork);
-    } else if (normalizedNetwork === "Base Sepolia") {
-      nextNonceBaseSepolia = currentNonce;
-      addLog(`Nonce awal untuk Base Sepolia: ${nextNonceBaseSepolia}`, "debug", normalizedNetwork);
     }
 
     walletInfoByNetwork[normalizedNetwork].network = config.NETWORK_NAME;
@@ -1468,7 +1307,7 @@ async function updateWalletData(network) {
       updateWallet();
     }
 
-    addLog("Wallet Info!!", "system", normalizedNetwork);
+    addLog("Wallet Information Updated !!", "system", normalizedNetwork);
   } catch (error) {
     if (error.code === "TIMEOUT") {
       addLog(`Timeout saat mencoba menghubungi RPC ${config.RPC_URL}. Coba lagi nanti.`, "error", network || currentNetwork);
@@ -1484,28 +1323,38 @@ function updateWallet() {
   let nativeToken;
   if (walletInfo.network === "Monad Network") {
     nativeToken = "MON";
-  } else if (walletInfo.network === "BSC Network") {
-    nativeToken = "BNB";
-  } else if (walletInfo.network === "Plume Network") {
-    nativeToken = "Plume";
+  } else if (walletInfo.network === "Pharos Network") {
+    nativeToken = "PHRS";
   } else {
     nativeToken = "ETH";
   }
   const nativeBalance = walletInfo.balanceNative ? Number(walletInfo.balanceNative).toFixed(4) : "0.0000";
   const usdc = walletInfo.balanceUsdc ? Number(walletInfo.balanceUsdc).toFixed(2) : "0.00";
   const r2usd = walletInfo.balanceR2usd ? Number(walletInfo.balanceR2usd).toFixed(4) : "0.0000";
-  const sr2usd = walletInfo.balanceSr2usd ? Number(walletInfo.balanceSr2usd).toFixed(4) : "0.0000";
-  const lpR2usdSr2usd = walletInfo.network === "BSC Network" || walletInfo.network === "Monad Network" || walletInfo.network === "Base Sepolia Testnet" ? "N/A" : (walletInfo.balanceLpR2usdSr2usd ? Number(walletInfo.balanceLpR2usdSr2usd).toFixed(4) : "0.0000");
-  const lpUsdcR2usd = walletInfo.network === "BSC Network" || walletInfo.network === "Monad Network" || walletInfo.network === "Base Sepolia Testnet" ? "N/A" : (walletInfo.balanceLpUsdcR2usd ? Number(walletInfo.balanceLpUsdcR2usd).toFixed(4) : "0.0000");
 
-  const content = `┌── Address   : {bright-yellow-fg}${shortAddress}{/bright-yellow-fg}
-│   ├── ${nativeToken}           : {bright-green-fg}${nativeBalance}{/bright-green-fg}
-│   ├── USDC            : {bright-green-fg}${usdc}{/bright-green-fg}
-│   ├── R2USD           : {bright-green-fg}${r2usd}{/bright-green-fg}
-│   ├── sR2USD          : {bright-green-fg}${sr2usd}{/bright-green-fg}
-│   ├── LP R2USD-sR2USD : {bright-green-fg}${lpR2usdSr2usd}{/bright-green-fg}
-│   └── LP USDC-R2USD   : {bright-green-fg}${lpUsdcR2usd}{/bright-green-fg}
-└── Network        : {bright-cyan-fg}${walletInfo.network}{/bright-cyan-fg}`;
+  let tokenBalances = '';
+  if (walletInfo.network === "Sepolia R2 Testnet") {
+    const r2 = walletInfo.balanceR2 ? Number(walletInfo.balanceR2).toFixed(4) : "0.0000";
+    const lpR2R2usd = walletInfo.balanceLpR2R2usd ? Number(walletInfo.balanceLpR2R2usd).toFixed(6) : "0.00000";
+    const lpUsdcR2 = walletInfo.balanceLpUsdcR2 ? Number(walletInfo.balanceLpUsdcR2).toFixed(6) : "0.00000";
+    tokenBalances = `│   ├── R2             : {bright-green-fg}${r2}{/bright-green-fg}\n` +
+                    `│   ├── LP R2-R2USD    : {bright-green-fg}${lpR2R2usd}{/bright-green-fg}\n` +
+                    `│   └── LP USDC-R2     : {bright-green-fg}${lpUsdcR2}{/bright-green-fg}\n`;
+  } else {
+    const sr2usd = walletInfo.balanceSr2usd ? Number(walletInfo.balanceSr2usd).toFixed(6) : "0.000000";
+    const lpR2usdSr2usd = walletInfo.network === "Pharos Network" ? "N/A" : (walletInfo.balanceLpR2usdSr2usd ? Number(walletInfo.balanceLpR2usdSr2usd).toFixed(12) : "0.000000000000");
+    const lpUsdcR2usd = walletInfo.network === "Pharos Network" ? "N/A" : (walletInfo.balanceLpUsdcR2usd ? Number(walletInfo.balanceLpUsdcR2usd).toFixed(12) : "0.000000000000");
+    tokenBalances = `│   ├── sR2USD          : {bright-green-fg}${sr2usd}{/bright-green-fg}\n` +
+                    `│   ├── LP R2USD-sR2USD : {bright-green-fg}${lpR2usdSr2usd}{/bright-green-fg}\n` +
+                    `│   └── LP USDC-R2USD   : {bright-green-fg}${lpUsdcR2usd}{/bright-green-fg}\n`;
+  }
+
+  const content = `┌── Address   : {bright-yellow-fg}${shortAddress}{/bright-yellow-fg}\n` +
+                  `│   ├── ${nativeToken}           : {bright-green-fg}${nativeBalance}{/bright-green-fg}\n` +
+                  `│   ├── USDC            : {bright-green-fg}${usdc}{/bright-green-fg}\n` +
+                  `│   ├── R2USD           : {bright-green-fg}${r2usd}{/bright-green-fg}\n` +
+                  tokenBalances +
+                  `└── Network        : {bright-cyan-fg}${walletInfo.network}{/bright-cyan-fg}`;
   walletBox.setContent(content);
   safeRender();
 }
@@ -1542,9 +1391,269 @@ async function checkContractPaused(contractAddress, provider, network) {
   }
 }
 
-async function estimateSwapOutput(amountUsdc, network) {
-  addLog(`Estimasi output tidak tersedia, menggunakan amountOutMin=0`, "warning", network);
-  return ethers.parseUnits("0", 6);
+async function swapTokens(amount, tokenIn, tokenOut, nonce, wallet, provider, config) {
+  const network = config.NETWORK_NAME;
+  const routerAddress = "0xeE567Fe1712Faf6149d80dA1E6934E354124CfE3";
+
+  const tokenInContract = new ethers.Contract(tokenIn, ERC20ABI, provider);
+  const tokenOutContract = new ethers.Contract(tokenOut, ERC20ABI, provider);
+
+  const balanceIn = await tokenInContract.balanceOf(wallet.address);
+  if (BigInt(balanceIn.toString()) < BigInt(amount.toString())) {
+    throw new Error(`Saldo ${tokenIn} tidak cukup`);
+  }
+
+  await ensureApproval(tokenIn, routerAddress, amount, wallet, network);
+
+  const deadline = Math.floor(Date.now() / 1000) + 60 * 20; 
+  const amountOutMin = 0; 
+
+  const routerContract = new ethers.Contract(routerAddress, [
+    "function swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, address[] path, address to, uint256 deadline) returns (uint256[])"
+  ], wallet);
+
+  const path = [tokenIn, tokenOut];
+
+  const tx = await routerContract.swapExactTokensForTokens(
+    amount,
+    amountOutMin,
+    path,
+    wallet.address,
+    deadline,
+    { nonce: nonce }
+  );
+
+  return tx;
+}
+
+async function autoSwapR2Usdc(network) {
+  const ranges = randomAmountRanges["SWAP_R2_USDC"];
+  let amount;
+  let txPromise;
+  let currentDirection = swapDirection[network];
+
+  if (currentDirection) {
+    amount = getRandomNumber(ranges["R2"].min, ranges["R2"].max).toFixed(18);
+    addLog(`Mencoba swap: ${amount} R2 ke USDC`, "swap", network);
+    try {
+      txPromise = addTransactionToQueue(
+        (nonce, wallet, provider, config) => swapTokens(ethers.parseUnits(amount, 18), config.R2_ADDRESS, config.USDC_ADDRESS, nonce, wallet, provider, config),
+        `Swap ${amount} R2 to USDC`,
+        network
+      );
+    } catch (error) {
+      if (error.message.includes("Saldo R2 tidak cukup")) {
+        addLog("Saldo R2 tidak cukup, mencoba swap USDC ke R2", "warning", network);
+        amount = getRandomNumber(ranges["USDC"].min, ranges["USDC"].max).toFixed(6);
+        txPromise = addTransactionToQueue(
+          (nonce, wallet, provider, config) => swapTokens(ethers.parseUnits(amount, 6), config.USDC_ADDRESS, config.R2_ADDRESS, nonce, wallet, provider, config),
+          `Swap ${amount} USDC to R2`,
+          network
+        );
+      } else {
+        throw error;
+      }
+    }
+  } else {
+    amount = getRandomNumber(ranges["USDC"].min, ranges["USDC"].max).toFixed(6);
+    addLog(`Mencoba swap: ${amount} USDC ke R2`, "swap", network);
+    try {
+      txPromise = addTransactionToQueue(
+        (nonce, wallet, provider, config) => swapTokens(ethers.parseUnits(amount, 6), config.USDC_ADDRESS, config.R2_ADDRESS, nonce, wallet, provider, config),
+        `Swap ${amount} USDC to R2`,
+        network
+      );
+    } catch (error) {
+      if (error.message.includes("Saldo USDC tidak cukup")) {
+        addLog("Saldo USDC tidak cukup, mencoba swap R2 ke USDC", "warning", network);
+        amount = getRandomNumber(ranges["R2"].min, ranges["R2"].max).toFixed(18);
+        txPromise = addTransactionToQueue(
+          (nonce, wallet, provider, config) => swapTokens(ethers.parseUnits(amount, 18), config.R2_ADDRESS, config.USDC_ADDRESS, nonce, wallet, provider, config),
+          `Swap ${amount} R2 to USDC`,
+          network
+        );
+      } else {
+        throw error;
+      }
+    }
+  }
+
+  try {
+    const result = await txPromise;
+    if (result && result.receipt && result.receipt.status === 1) {
+      swapDirection[network] = !currentDirection;
+      addLog(`Arah swap diubah menjadi: ${swapDirection[network] ? "R2 -> USDC" : "USDC -> R2"}`, "debug", network);
+    }
+    return result;
+  } catch (error) {
+    addLog(`Swap gagal: ${error.message}`, "error", network);
+    return null;
+  }
+}
+
+async function autoSwapR2R2usd(network) {
+  const ranges = randomAmountRanges["SWAP_R2_R2USD"];
+  let amount;
+  let txPromise;
+  let currentDirection = swapDirection[network];
+
+  if (currentDirection) {
+    amount = getRandomNumber(ranges["R2"].min, ranges["R2"].max).toFixed(4);
+    addLog(`Mencoba swap: ${amount} R2 ke R2USD`, "swap", network);
+    try {
+      txPromise = addTransactionToQueue(
+        (nonce, wallet, provider, config) => swapTokens(ethers.parseUnits(amount, 18), config.R2_ADDRESS, config.R2USD_ADDRESS, nonce, wallet, provider, config),
+        `Swap ${amount} R2 to R2USD`,
+        network
+      );
+    } catch (error) {
+      if (error.message.includes("Saldo R2 tidak cukup")) {
+        addLog("Saldo R2 tidak cukup, mencoba swap R2USD ke R2", "warning", network);
+        amount = getRandomNumber(ranges["R2USD"].min, ranges["R2USD"].max).toFixed(4);
+        txPromise = addTransactionToQueue(
+          (nonce, wallet, provider, config) => swapTokens(ethers.parseUnits(amount, 6), config.R2USD_ADDRESS, config.R2_ADDRESS, nonce, wallet, provider, config),
+          `Swap ${amount} R2USD to R2`,
+          network
+        );
+      } else {
+        throw error;
+      }
+    }
+  } else {
+    amount = getRandomNumber(ranges["R2USD"].min, ranges["R2USD"].max).toFixed(6);
+    addLog(`Mencoba swap: ${amount} R2USD ke R2`, "swap", network);
+    try {
+      txPromise = addTransactionToQueue(
+        (nonce, wallet, provider, config) => swapTokens(ethers.parseUnits(amount, 6), config.R2USD_ADDRESS, config.R2_ADDRESS, nonce, wallet, provider, config),
+        `Swap ${amount} R2USD to R2`,
+        network
+      );
+    } catch (error) {
+      if (error.message.includes("Saldo R2USD tidak cukup")) {
+        addLog("Saldo R2USD tidak cukup, mencoba swap R2 ke R2USD", "warning", network);
+        amount = getRandomNumber(ranges["R2"].min, ranges["R2"].max).toFixed(4);
+        txPromise = addTransactionToQueue(
+          (nonce, wallet, provider, config) => swapTokens(ethers.parseUnits(amount, 18), config.R2_ADDRESS, config.R2USD_ADDRESS, nonce, wallet, provider, config),
+          `Swap ${amount} R2 to R2USD`,
+          network
+        );
+      } else {
+        throw error;
+      }
+    }
+  }
+
+  try {
+    const result = await txPromise;
+    if (result && result.receipt && result.receipt.status === 1) {
+      swapDirection[network] = !currentDirection;
+      addLog(`Arah swap diubah menjadi: ${swapDirection[network] ? "R2 -> R2USD" : "R2USD -> R2"}`, "debug", network);
+    }
+    return result;
+  } catch (error) {
+    addLog(`Swap gagal: ${error.message}`, "error", network);
+    return null;
+  }
+}
+
+async function autoAddLpR2Usdc(amountR2, nonce, wallet, provider, config) {
+  const network = config.NETWORK_NAME;
+  const routerAddress = config.ROUTER_ADDRESS;
+  if (!routerAddress) {
+    throw new Error("Router address tidak valid atau tidak didefinisikan di config");
+  }
+
+  const r2Contract = new ethers.Contract(config.R2_ADDRESS, ERC20ABI, provider);
+  const usdcContract = new ethers.Contract(config.USDC_ADDRESS, ERC20ABI, provider);
+
+  const balanceR2 = await r2Contract.balanceOf(wallet.address);
+  const balanceUsdc = await usdcContract.balanceOf(wallet.address);
+
+  const amountR2Wei = ethers.parseUnits(amountR2.toString(), 18);
+  if (BigInt(balanceR2.toString()) < BigInt(amountR2Wei.toString())) {
+    throw new Error(`Saldo R2 tidak cukup: ${ethers.formatUnits(balanceR2, 18)} R2`);
+  }
+
+  const amountUsdc = (parseFloat(amountR2) * 150.041216 / 100).toFixed(6);
+  const amountUsdcWei = ethers.parseUnits(amountUsdc, 6);
+  if (BigInt(balanceUsdc.toString()) < BigInt(amountUsdcWei.toString())) {
+    throw new Error(`Saldo USDC tidak cukup: ${ethers.formatUnits(balanceUsdc, 6)} USDC`);
+  }
+
+  await ensureApproval(config.R2_ADDRESS, routerAddress, amountR2Wei, wallet, network);
+  await ensureApproval(config.USDC_ADDRESS, routerAddress, amountUsdcWei, wallet, network);
+
+  const routerContract = new ethers.Contract(routerAddress, [
+    "function addLiquidity(address tokenA, address tokenB, uint256 amountADesired, uint256 amountBDesired, uint256 amountAMin, uint256 amountBMin, address to, uint256 deadline) returns (uint256 amountA, uint256 amountB, uint256 liquidity)"
+  ], wallet);
+
+  const deadline = Math.floor(Date.now() / 1000) + 60 * 20;
+  const amountAMin = ethers.parseUnits((parseFloat(amountR2) * 0.99).toFixed(4), 6);
+  const amountBMin = ethers.parseUnits((parseFloat(amountUsdc) * 0.99).toFixed(4), 6);
+
+  const tx = await routerContract.addLiquidity(
+    config.R2_ADDRESS,
+    config.USDC_ADDRESS,
+    amountR2Wei,
+    amountUsdcWei,
+    amountAMin,
+    amountBMin,
+    wallet.address,
+    deadline,
+    { nonce: nonce, gasLimit: 500000 }
+  );
+
+  return tx;
+}
+
+async function autoAddLpR2R2usd(amountR2, nonce, wallet, provider, config) {
+  const network = config.NETWORK_NAME;
+  const routerAddress = config.ROUTER_ADDRESS;
+  if (!routerAddress) {
+    throw new Error("Router address tidak valid atau tidak didefinisikan di config");
+  }
+
+  const r2Contract = new ethers.Contract(config.R2_ADDRESS, ERC20ABI, provider);
+  const r2usdContract = new ethers.Contract(config.R2USD_ADDRESS, ERC20ABI, provider);
+
+  const balanceR2 = await r2Contract.balanceOf(wallet.address);
+  const balanceR2usd = await r2usdContract.balanceOf(wallet.address);
+
+  const amountR2Wei = ethers.parseUnits(amountR2.toString(), 18);
+  if (BigInt(balanceR2.toString()) < BigInt(amountR2Wei.toString())) {
+    throw new Error(`Saldo R2 tidak cukup: ${ethers.formatUnits(balanceR2, 18)} R2`);
+  }
+
+  const amountR2usd = (parseFloat(amountR2) * 148.427749 / 100).toFixed(6);
+  const amountR2usdWei = ethers.parseUnits(amountR2usd, 6);
+  if (BigInt(balanceR2usd.toString()) < BigInt(amountR2usdWei.toString())) {
+    throw new Error(`Saldo R2USD tidak cukup: ${ethers.formatUnits(balanceR2usd, 6)} R2USD`);
+  }
+
+  await ensureApproval(config.R2_ADDRESS, routerAddress, amountR2Wei, wallet, network);
+  await ensureApproval(config.R2USD_ADDRESS, routerAddress, amountR2usdWei, wallet, network);
+
+  const routerContract = new ethers.Contract(routerAddress, [
+    "function addLiquidity(address tokenA, address tokenB, uint256 amountADesired, uint256 amountBDesired, uint256 amountAMin, uint256 amountBMin, address to, uint256 deadline) returns (uint256 amountA, uint256 amountB, uint256 liquidity)"
+  ], wallet);
+
+  const deadline = Math.floor(Date.now() / 1000) + 60 * 20;
+  const amountAMin = ethers.parseUnits((parseFloat(amountR2) * 0.99).toFixed(4), 6);
+  const amountBMin = ethers.parseUnits((parseFloat(amountR2usd) * 0.99).toFixed(4), 6);
+
+  const tx = await routerContract.addLiquidity(
+    config.R2_ADDRESS,
+    config.R2USD_ADDRESS,
+    amountR2Wei,
+    amountR2usdWei,
+    amountAMin,
+    amountBMin,
+    wallet.address,
+    deadline,
+    { nonce: nonce, gasLimit: 500000 }
+  );
+
+  return tx;
 }
 
 async function swapUsdcToR2usd(amountUsdc, nonce, wallet, provider, config) {
@@ -1587,9 +1696,9 @@ async function swapUsdcToR2usd(amountUsdc, nonce, wallet, provider, config) {
       data,
       from: wallet.address,
     });
-    addLog("transaksi berhasil, melanjutkan ke pengiriman", "debug", network);
+    addLog("Simulasi transaksi berhasil, melanjutkan ke pengiriman", "debug", network);
   } catch (error) {
-    throw new Error(`transaksi gagal: ${error.reason || error.message}`);
+    throw new Error(`Simulasi transaksi gagal: ${error.reason || error.message}`);
   }
 
   const tx = await wallet.sendTransaction({
@@ -1602,7 +1711,7 @@ async function swapUsdcToR2usd(amountUsdc, nonce, wallet, provider, config) {
   return tx;
 }
 
-async function swapR2usdToUsdcBSC(amountR2usd, nonce, wallet, provider, config) {
+async function swapR2usdToUsdC(amountR2usd, nonce, wallet, provider, config) {
   const network = config.NETWORK_NAME;
   const amount = ethers.parseUnits(amountR2usd.toString(), 6);
   const routerContractAddress = config.ROUTER_R2USD_TO_USDC;
@@ -1635,9 +1744,9 @@ async function swapR2usdToUsdcBSC(amountR2usd, nonce, wallet, provider, config) 
       data,
       from: wallet.address,
     });
-    addLog("transaksi burn berhasil, melanjutkan ke pengiriman", "debug", network);
+    addLog("Simulasi transaksi burn berhasil, melanjutkan ke pengiriman", "debug", network);
   } catch (error) {
-    throw new Error(`transaksi burn gagal: ${error.reason || error.message}`);
+    throw new Error(`Simulasi transaksi burn gagal: ${error.reason || error.message}`);
   }
 
   const tx = await wallet.sendTransaction({
@@ -1691,9 +1800,9 @@ async function swapR2usdToUsdc(amountR2usd, nonce, wallet, provider, config) {
       data,
       from: wallet.address,
     });
-    addLog("transaksi berhasil, melanjutkan pengiriman", "debug", network);
+    addLog("Simulasi transaksi berhasil, melanjutkan ke pengiriman", "debug", network);
   } catch (error) {
-    throw new Error(`transaksi gagal: ${error.reason || error.message}`);
+    throw new Error(`Simulasi transaksi gagal: ${error.reason || error.message}`);
   }
 
   const tx = await wallet.sendTransaction({
@@ -1714,7 +1823,7 @@ async function autoSwapR2usdUsdc(network) {
 
   if (currentDirection) {
     amount = getRandomNumber(ranges["USDC"].min, ranges["USDC"].max).toFixed(6);
-    addLog(`coba swap: ${amount} USDC ke R2USD`, "swap", network);
+    addLog(`Mencoba swap: ${amount} USDC ke R2USD`, "swap", network);
     try {
       txPromise = addTransactionToQueue(
         (nonce, wallet, provider, config) => swapUsdcToR2usd(amount, nonce, wallet, provider, config),
@@ -1725,9 +1834,9 @@ async function autoSwapR2usdUsdc(network) {
       if (error.message.includes("Saldo USDC tidak cukup")) {
         addLog("Saldo USDC tidak cukup, mencoba swap R2USD ke USDC", "warning", network);
         amount = getRandomNumber(ranges["R2USD"].min, ranges["R2USD"].max).toFixed(6);
-        if (network === "BSC" || network === "Monad" || network === "Base Sepolia") {
+        if (network === "Pharos" || network === "Monad") {
           txPromise = addTransactionToQueue(
-            (nonce, wallet, provider, config) => swapR2usdToUsdcBSC(amount, nonce, wallet, provider, config),
+            (nonce, wallet, provider, config) => swapR2usdToUsdC(amount, nonce, wallet, provider, config),
             `Swap ${amount} R2USD to USDC`,
             network
           );
@@ -1746,9 +1855,9 @@ async function autoSwapR2usdUsdc(network) {
     amount = getRandomNumber(ranges["R2USD"].min, ranges["R2USD"].max).toFixed(6);
     addLog(`Mencoba swap: ${amount} R2USD ke USDC`, "swap", network);
     try {
-      if (network === "BSC" || network === "Monad" || network === "Base Sepolia") {
+      if (network === "Pharos" || network === "Monad") {
         txPromise = addTransactionToQueue(
-          (nonce, wallet, provider, config) => swapR2usdToUsdcBSC(amount, nonce, wallet, provider, config),
+          (nonce, wallet, provider, config) => swapR2usdToUsdC(amount, nonce, wallet, provider, config),
           `Swap ${amount} R2USD to USDC`,
           network
         );
@@ -1827,15 +1936,15 @@ async function autoStakeR2usdSr2usd(amountR2usd, nonce, wallet, provider, config
       data,
       from: wallet.address,
     });
-    addLog("transaksi staking berhasil, melanjutkan pengiriman", "debug", network);
+    addLog("Simulasi transaksi staking berhasil, melanjutkan ke pengiriman", "debug", network);
   } catch (error) {
-    throw new Error(`transaksi staking gagal: ${error.reason || error.message}`);
+    throw new Error(`Simulasi transaksi staking gagal: ${error.reason || error.message}`);
   }
 
   const tx = await wallet.sendTransaction({
     to: stakingContractAddress,
     data: data,
-    gasLimit: 100000,
+    gasLimit: 500000,
     nonce: nonce,
   });
 
@@ -1880,27 +1989,47 @@ async function autoAddLpR2usdSr2usd(amountR2usd, nonce, wallet, provider, config
   await ensureApproval(config.R2USD_ADDRESS, lpContractAddress, amountWei, wallet, network);
   await ensureApproval(config.sR2USD_ADDRESS, lpContractAddress, amountSr2usdWei, wallet, network);
 
-  const lpContract = new ethers.Contract(lpContractAddress, LP_CONTRACT_ABI, provider);
-  let estimatedLpTokens;
-  try {
-    estimatedLpTokens = await lpContract.calc_token_amount([amountSr2usdWei, amountWei], true);
-    addLog(`Estimasi LP token: ${ethers.formatUnits(estimatedLpTokens, 18)}`, "debug", network);
-  } catch (error) {
-    addLog(`Gagal mengestimasi LP token: ${error.message}, menggunakan _min_mint_amount=0`, "warning", network);
-    estimatedLpTokens = 0;
+  let txData;
+  const lpContractWithSigner = new ethers.Contract(lpContractAddress, network === "Monad Network" ? UNISWAP_V2_LP_ABI : LP_CONTRACT_ABI, wallet);
+
+  if (network === "Monad Network") {
+    const deadline = Math.floor(Date.now() / 1000) + 60 * 20; 
+    const slippageTolerance = 0.99;
+    const amountR2usdMin = BigInt(Math.floor(amount * slippageTolerance * 10**6));
+    const amountSr2usdMin = BigInt(Math.floor(amount * slippageTolerance * 10**6));
+
+    txData = await lpContractWithSigner.addLiquidity.populateTransaction(
+      config.R2USD_ADDRESS,
+      config.sR2USD_ADDRESS,
+      amountWei,
+      amountSr2usdWei,
+      amountR2usdMin,
+      amountSr2usdMin,
+      wallet.address,
+      deadline
+    );
+    addLog(`Data transaksi: ${txData.data}`, "debug", network);
+  } else {
+    const lpContract = new ethers.Contract(lpContractAddress, LP_CONTRACT_ABI, provider);
+    let estimatedLpTokens;
+    try {
+      estimatedLpTokens = await lpContract.calc_token_amount([amountSr2usdWei, amountWei], true);
+      addLog(`Estimasi LP token: ${ethers.formatUnits(estimatedLpTokens, 18)}`, "debug", network);
+    } catch (error) {
+      addLog(`Gagal mengestimasi LP token: ${error.message}, menggunakan _min_mint_amount=0`, "warning", network);
+      estimatedLpTokens = 0;
+    }
+
+    const slippageTolerance = 0.99;
+    const minMintAmount = estimatedLpTokens === 0 ? 0 : BigInt(Math.floor(Number(estimatedLpTokens) * slippageTolerance));
+
+    txData = await lpContractWithSigner.add_liquidity.populateTransaction(
+      [amountSr2usdWei, amountWei],
+      minMintAmount,
+      wallet.address
+    );
+    addLog(`Data transaksi: ${txData.data}`, "debug", network);
   }
-
-  const slippageTolerance = 0.99;
-  const minMintAmount = estimatedLpTokens === 0 ? 0 : BigInt(Math.floor(Number(estimatedLpTokens) * slippageTolerance));
-
-  const lpContractWithSigner = lpContract.connect(wallet);
-  const txData = await lpContractWithSigner.add_liquidity.populateTransaction(
-    [amountSr2usdWei, amountWei],
-    minMintAmount,
-    wallet.address
-  );
-
-  addLog(`Data transaksi: ${txData.data}`, "debug", network);
 
   try {
     await provider.call({
@@ -1908,21 +2037,20 @@ async function autoAddLpR2usdSr2usd(amountR2usd, nonce, wallet, provider, config
       data: txData.data,
       from: wallet.address,
     });
-    addLog("transaksi add liquidity berhasil", "debug", network);
+    addLog("Simulasi transaksi add liquidity berhasil", "debug", network);
   } catch (error) {
-    throw new Error(`transaksi add liquidity gagal: ${error.reason || error.message}`);
+    throw new Error(`Simulasi transaksi add liquidity gagal: ${error.reason || error.message}`);
   }
 
   const tx = await wallet.sendTransaction({
     to: lpContractAddress,
     data: txData.data,
-    gasLimit: 250000,
+    gasLimit: 500000,
     nonce: nonce,
   });
 
   return tx;
 }
-
 
 
 
@@ -1964,27 +2092,47 @@ async function autoAddLpUsdcR2usd(amountUsdc, nonce, wallet, provider, config) {
   await ensureApproval(config.USDC_ADDRESS, lpContractAddress, amountWei, wallet, network);
   await ensureApproval(config.R2USD_ADDRESS, lpContractAddress, amountR2usdWei, wallet, network);
 
-  const lpContract = new ethers.Contract(lpContractAddress, LP_USDC_R2USD_ABI, provider);
-  let estimatedLpTokens;
-  try {
-    estimatedLpTokens = await lpContract.calc_token_amount([amountR2usdWei, amountWei], true);
-    addLog(`Estimasi LP token: ${ethers.formatUnits(estimatedLpTokens, 18)}`, "debug", network);
-  } catch (error) {
-    addLog(`Gagal mengestimasi LP token: ${error.message}, menggunakan _min_mint_amount=0`, "warning", network);
-    estimatedLpTokens = 0;
+  let txData;
+  const lpContractWithSigner = new ethers.Contract(lpContractAddress, network === "Monad Network" ? UNISWAP_V2_LP_ABI : LP_USDC_R2USD_ABI, wallet);
+
+  if (network === "Monad Network") {
+    const deadline = Math.floor(Date.now() / 1000) + 60 * 20;
+    const slippageTolerance = 0.99;
+    const amountUsdcMin = BigInt(Math.floor(amount * slippageTolerance * 10**6));
+    const amountR2usdMin = BigInt(Math.floor(amount * slippageTolerance * 10**6));
+
+    txData = await lpContractWithSigner.addLiquidity.populateTransaction(
+      config.USDC_ADDRESS,
+      config.R2USD_ADDRESS,
+      amountWei,
+      amountR2usdWei,
+      amountUsdcMin,
+      amountR2usdMin,
+      wallet.address,
+      deadline
+    );
+    addLog(`Data transaksi: ${txData.data}`, "debug", network);
+  } else {
+    const lpContract = new ethers.Contract(lpContractAddress, LP_USDC_R2USD_ABI, provider);
+    let estimatedLpTokens;
+    try {
+      estimatedLpTokens = await lpContract.calc_token_amount([amountR2usdWei, amountWei], true);
+      addLog(`Estimasi LP token: ${ethers.formatUnits(estimatedLpTokens, 18)}`, "debug", network);
+    } catch (error) {
+      addLog(`Gagal mengestimasi LP token: ${error.message}, menggunakan _min_mint_amount=0`, "warning", network);
+      estimatedLpTokens = 0;
+    }
+
+    const slippageTolerance = 0.99;
+    const minMintAmount = estimatedLpTokens === 0 ? 0 : BigInt(Math.floor(Number(estimatedLpTokens) * slippageTolerance));
+
+    txData = await lpContractWithSigner.add_liquidity.populateTransaction(
+      [amountR2usdWei, amountWei],
+      minMintAmount,
+      wallet.address
+    );
+    addLog(`Data transaksi: ${txData.data}`, "debug", network);
   }
-
-  const slippageTolerance = 0.99;
-  const minMintAmount = estimatedLpTokens === 0 ? 0 : BigInt(Math.floor(Number(estimatedLpTokens) * slippageTolerance));
-
-  const lpContractWithSigner = lpContract.connect(wallet);
-  const txData = await lpContractWithSigner.add_liquidity.populateTransaction(
-    [amountR2usdWei, amountWei],
-    minMintAmount,
-    wallet.address
-  );
-
-  addLog(`Data transaksi: ${txData.data}`, "debug", network);
 
   try {
     await provider.call({
@@ -1992,15 +2140,15 @@ async function autoAddLpUsdcR2usd(amountUsdc, nonce, wallet, provider, config) {
       data: txData.data,
       from: wallet.address,
     });
-    addLog("transaksi add liquidity berhasil", "debug", network);
+    addLog("Simulasi transaksi add liquidity berhasil", "debug", network);
   } catch (error) {
-    throw new Error(`transaksi add liquidity gagal: ${error.reason || error.message}`);
+    throw new Error(`Simulasi transaksi add liquidity gagal: ${error.reason || error.message}`);
   }
 
   const tx = await wallet.sendTransaction({
     to: lpContractAddress,
     data: txData.data,
-    gasLimit: 250000,
+    gasLimit: 500000,
     nonce: nonce,
   });
 
@@ -2015,27 +2163,25 @@ async function runAutoAction(actionFunction, actionName, network) {
     normalizedNetwork = currentNetwork;
   }
   if (normalizedNetwork === "Sepolia Testnet") normalizedNetwork = "Sepolia";
-  else if (normalizedNetwork === "Arbitrum Sepolia Testnet") normalizedNetwork = "Arbitrum Sepolia";
-  else if (normalizedNetwork === "Plume Network") normalizedNetwork = "Plume";
-  else if (normalizedNetwork === "BSC Network") normalizedNetwork = "BSC";
+  else if (normalizedNetwork === "Sepolia R2 Testnet") normalizedNetwork = "Sepolia R2";
+  else if (normalizedNetwork === "Pharos Network") normalizedNetwork = "Pharos";
   else if (normalizedNetwork === "Monad Network") normalizedNetwork = "Monad";
-  else if (normalizedNetwork === "Base Sepolia Testnet") normalizedNetwork = "Base Sepolia";
 
   const swapRunning = normalizedNetwork === "Sepolia" ? swapRunningSepolia :
-                      normalizedNetwork === "Arbitrum Sepolia" ? swapRunningArbitrum :
-                      normalizedNetwork === "Plume" ? swapRunningPlume :
-                      normalizedNetwork === "BSC" ? swapRunningBSC :
-                      normalizedNetwork === "Monad" ? swapRunningMonad :
-                      normalizedNetwork === "Base Sepolia" ? swapRunningBaseSepolia : false;
+                      normalizedNetwork === "Sepolia R2" ? swapRunningSepoliaR2 :
+                      normalizedNetwork === "Pharos" ? swapRunningPharos :
+                      normalizedNetwork === "Monad" ? swapRunningMonad : false;
 
   if (swapRunning) {
-    addLog("Transaksi sedang berjalan di jaringan ini. Hentikan transaksi terlebih dahulu sayang.", "warning", normalizedNetwork);
+    addLog("Transaksi sedang berjalan di jaringan ini. Hentikan transaksi terlebih dahulu.", "warning", normalizedNetwork);
     return;
   }
 
   promptBox.setFront();
   if (actionName.includes("Stake") || actionName.includes("Add LP")) {
-    promptBox.input(`Masukkan jumlah ${actionName.includes("USDC & R2USD") ? "USDC" : "R2USD"} untuk ${actionName}`, "", async (err, value) => {
+    const tokenPrompt = actionName.includes("R2 & USDC") ? "R2" :
+                       actionName.includes("USDC & R2USD") ? "USDC" : "R2USD";
+    promptBox.input(`Masukkan jumlah ${tokenPrompt} untuk ${actionName}`, "", async (err, value) => {
       promptBox.hide();
       safeRender();
       if (err || !value) {
@@ -2047,93 +2193,81 @@ async function runAutoAction(actionFunction, actionName, network) {
         addLog(`${actionName}: Jumlah harus berupa angka lebih besar dari 0.`, "swap", normalizedNetwork);
         return;
       }
-      addLog(`${actionName}: Mulai ${actionName.includes("Stake") ? "staking" : "menambahkan LP"} ${amount} ${actionName.includes("USDC & R2USD") ? "USDC" : "R2USD"}.`, "swap", normalizedNetwork);
+      addLog(`${actionName}: Mulai ${actionName.includes("Stake") ? "staking" : "menambahkan LP"} ${amount} ${tokenPrompt}.`, "swap", normalizedNetwork);
 
       if (normalizedNetwork === "Sepolia") {
         swapRunningSepolia = true;
         addLog("swapRunningSepolia diatur ke true", "debug", normalizedNetwork);
-      } else if (normalizedNetwork === "Arbitrum Sepolia") {
-        swapRunningArbitrum = true;
-        addLog("swapRunningArbitrum diatur ke true", "debug", normalizedNetwork);
-      } else if (normalizedNetwork === "Plume") {
-        swapRunningPlume = true;
-        addLog("swapRunningPlume diatur ke true", "debug", normalizedNetwork);
-      } else if (normalizedNetwork === "BSC") {
-        swapRunningBSC = true;
-        addLog("swapRunningBSC diatur ke true", "debug", normalizedNetwork);
+      } else if (normalizedNetwork === "Sepolia R2") {
+        swapRunningSepoliaR2 = true;
+        addLog("swapRunningSepoliaR2 diatur ke true", "debug", normalizedNetwork);
+      } else if (normalizedNetwork === "Pharos") {
+        swapRunningPharos = true;
+        addLog("swapRunningPharos diatur ke true", "debug", normalizedNetwork);
       } else if (normalizedNetwork === "Monad") {
         swapRunningMonad = true;
         addLog("swapRunningMonad diatur ke true", "debug", normalizedNetwork);
-      } else if (normalizedNetwork === "Base Sepolia") {
-        swapRunningBaseSepolia = true;
-        addLog("swapRunningBaseSepolia diatur ke true", "debug", normalizedNetwork);
-      }
+      } 
 
       mainMenu.setItems(getMainMenItems());
       const activeSubMenu = normalizedNetwork === "Sepolia" ? sepoliaSubMenu :
-                            normalizedNetwork === "Arbitrum Sepolia" ? arbitrumSepoliaSubMenu :
-                            normalizedNetwork === "Plume" ? plumeSubMenu :
-                            normalizedNetwork === "BSC" ? bscSubMenu :
-                            normalizedNetwork === "Monad" ? monadSubMenu :
-                            baseSepoliaSubMenu;
+                            normalizedNetwork === "Sepolia R2" ? r2SepoliaSubMenu :
+                            normalizedNetwork === "Pharos" ? pharosSubMenu :
+                            monadSubMenu;
       activeSubMenu.setItems(normalizedNetwork === "Sepolia" ? getSepoliaSubMenuItems() :
-                            normalizedNetwork === "Arbitrum Sepolia" ? getArbitrumSepoliaSubMenuItems() :
-                            normalizedNetwork === "Plume" ? getPlumeSubMenuItems() :
-                            normalizedNetwork === "BSC" ? getBscSubMenuItems() :
-                            normalizedNetwork === "Monad" ? getMonadSubMenuItems() :
-                            getBaseSepoliaSubMenuItems());
+                            normalizedNetwork === "Sepolia R2" ? getSepoliaR2SubMenuItems() :
+                            normalizedNetwork === "Pharos" ? getPharosSubMenuItems() :
+                            getMonadSubMenuItems());
       activeSubMenu.show();
       activeSubMenu.focus();
       safeRender();
 
       try {
+        const selectedFunction = actionName.includes("Stake") ? 
+          (nonce, wallet, provider, config) => autoStakeR2usdSr2usd(amount, nonce, wallet, provider, config) :
+          actionName.includes("USDC & R2USD") ? 
+            (nonce, wallet, provider, config) => autoAddLpUsdcR2usd(amount, nonce, wallet, provider, config) :
+          actionName.includes("R2 & USDC") ? 
+            (nonce, wallet, provider, config) => autoAddLpR2Usdc(amount, nonce, wallet, provider, config) :
+          actionName.includes("R2 & R2USD") ? 
+            (nonce, wallet, provider, config) => autoAddLpR2R2usd(amount, nonce, wallet, provider, config) :
+          (nonce, wallet, provider, config) => autoAddLpR2usdSr2usd(amount, nonce, wallet, provider, config);
+
         await addTransactionToQueue(
-          actionName.includes("Stake") ?
-            (nonce, wallet, provider, config) => autoStakeR2usdSr2usd(amount, nonce, wallet, provider, config) :
-            actionName.includes("USDC & R2USD") ?
-              (nonce, wallet, provider, config) => autoAddLpUsdcR2usd(amount, nonce, wallet, provider, config) :
-              (nonce, wallet, provider, config) => autoAddLpR2usdSr2usd(amount, nonce, wallet, provider, config),
-          `${actionName} ${amount} ${actionName.includes("USDC & R2USD") ? "USDC" : "R2USD"}`,
+          selectedFunction,
+          `${actionName} ${amount} ${tokenPrompt}`,
           normalizedNetwork
-        );
+        );    
         await updateWalletData(normalizedNetwork);
-        addLog(`${actionName}: ${actionName.includes("Stake") ? "Staking" : "Penambahan LP"} ${amount} ${actionName.includes("USDC & R2USD") ? "USDC" : "R2USD"} selesai.`, "success", normalizedNetwork);
+        addLog(`${actionName}: ${actionName.includes("Stake") ? "Staking" : "Penambahan LP"} ${amount} ${tokenPrompt} selesai.`, "success", normalizedNetwork);
       } catch (error) {
         addLog(`${actionName}: Gagal - ${error.message}`, "error", normalizedNetwork);
       } finally {
         if (normalizedNetwork === "Sepolia") {
           swapRunningSepolia = false;
           addLog("swapRunningSepolia diatur ke false", "debug", normalizedNetwork);
-        } else if (normalizedNetwork === "Arbitrum Sepolia") {
-          swapRunningArbitrum = false;
-          addLog("swapRunningArbitrum diatur ke false", "debug", normalizedNetwork);
-        } else if (normalizedNetwork === "Plume") {
-          swapRunningPlume = false;
-          addLog("swapRunningPlume diatur ke false", "debug", normalizedNetwork);
-        } else if (normalizedNetwork === "BSC") {
-          swapRunningBSC = false;
-          addLog("swapRunningBSC diatur ke false", "debug", normalizedNetwork);
+        } else if (normalizedNetwork === "Sepolia R2") {
+          swapRunningSepoliaR2 = false;
+          addLog("swapRunningSepoliaR2 diatur ke false", "debug", normalizedNetwork);
+        } else if (normalizedNetwork === "Pharos") {
+          swapRunningPharos = false;
+          addLog("swapRunningPharos diatur ke false", "debug", normalizedNetwork);
         } else if (normalizedNetwork === "Monad") {
           swapRunningMonad = false;
           addLog("swapRunningMonad diatur ke false", "debug", normalizedNetwork);
-        } else if (normalizedNetwork === "Base Sepolia") {
-          swapRunningBaseSepolia = false;
-          addLog("swapRunningBaseSepolia diatur ke false", "debug", normalizedNetwork);
-        }
+        } 
 
         mainMenu.setItems(getMainMenItems());
         activeSubMenu.setItems(normalizedNetwork === "Sepolia" ? getSepoliaSubMenuItems() :
-                              normalizedNetwork === "Arbitrum Sepolia" ? getArbitrumSepoliaSubMenuItems() :
-                              normalizedNetwork === "Plume" ? getPlumeSubMenuItems() :
-                              normalizedNetwork === "BSC" ? getBscSubMenuItems() :
-                              normalizedNetwork === "Monad" ? getMonadSubMenuItems() :
-                              getBaseSepoliaSubMenuItems());
+                              normalizedNetwork === "Sepolia R2" ? getSepoliaR2SubMenuItems() :
+                              normalizedNetwork === "Pharos" ? getPharosSubMenuItems() :
+                              getMonadSubMenuItems());
         safeRender();
       }
       addLog(`${actionName}: Selesai.`, "swap", normalizedNetwork);
     });
   } else {
-    promptBox.readInput(`mau berapa kali swap ${actionName}`, "", async (err, value) => {
+    promptBox.readInput(`Masukkan jumlah Swap untuk ${actionName}`, "", async (err, value) => {
       promptBox.hide();
       safeRender();
       if (err || !value) {
@@ -2151,41 +2285,29 @@ async function runAutoAction(actionFunction, actionName, network) {
         swapRunningSepolia = true;
         swapCancelledSepolia = false;
         addLog("swapRunningSepolia diatur ke true", "debug", normalizedNetwork);
-      } else if (normalizedNetwork === "Arbitrum Sepolia") {
-        swapRunningArbitrum = true;
-        swapCancelledArbitrum = false;
-        addLog("swapRunningArbitrum diatur ke true", "debug", normalizedNetwork);
-      } else if (normalizedNetwork === "Plume") {
-        swapRunningPlume = true;
-        swapCancelledPlume = false;
-        addLog("swapRunningPlume diatur ke true", "debug", normalizedNetwork);
-      } else if (normalizedNetwork === "BSC") {
-        swapRunningBSC = true;
-        swapCancelledBSC = false;
-        addLog("swapRunningBSC diatur ke true", "debug", normalizedNetwork);
+      } else if (normalizedNetwork === "Sepolia R2") {
+        swapRunningSepoliaR2 = true;
+        swapCancelledSepoliaR2 = false;
+        addLog("swapRunningSepoliaR2 diatur ke true", "debug", normalizedNetwork);
+      } else if (normalizedNetwork === "Pharos") {
+        swapRunningPharos = true;
+        swapCancelledPharos = false;
+        addLog("swapRunningPharos diatur ke true", "debug", normalizedNetwork);
       } else if (normalizedNetwork === "Monad") {
         swapRunningMonad = true;
         swapCancelledMonad = false;
         addLog("swapRunningMonad diatur ke true", "debug", normalizedNetwork);
-      } else if (normalizedNetwork === "Base Sepolia") {
-        swapRunningBaseSepolia = true;
-        swapCancelledBaseSepolia = false;
-        addLog("swapRunningBaseSepolia diatur ke true", "debug", normalizedNetwork);
-      }
+      } 
 
       mainMenu.setItems(getMainMenItems());
       const activeSubMenu = normalizedNetwork === "Sepolia" ? sepoliaSubMenu :
-                            normalizedNetwork === "Arbitrum Sepolia" ? arbitrumSepoliaSubMenu :
-                            normalizedNetwork === "Plume" ? plumeSubMenu :
-                            normalizedNetwork === "BSC" ? bscSubMenu :
-                            normalizedNetwork === "Monad" ? monadSubMenu :
-                            baseSepoliaSubMenu;
+                            normalizedNetwork === "Sepolia R2" ? r2SepoliaSubMenu :
+                            normalizedNetwork === "Pharos" ? pharosSubMenu :
+                            monadSubMenu;
       activeSubMenu.setItems(normalizedNetwork === "Sepolia" ? getSepoliaSubMenuItems() :
-                            normalizedNetwork === "Arbitrum Sepolia" ? getArbitrumSepoliaSubMenuItems() :
-                            normalizedNetwork === "Plume" ? getPlumeSubMenuItems() :
-                            normalizedNetwork === "BSC" ? getBscSubMenuItems() :
-                            normalizedNetwork === "Monad" ? getMonadSubMenuItems() :
-                            getBaseSepoliaSubMenuItems());
+                            normalizedNetwork === "Sepolia R2" ? getSepoliaR2SubMenuItems() :
+                            normalizedNetwork === "Pharos" ? getPharosSubMenuItems() :
+                            getMonadSubMenuItems());
       activeSubMenu.show();
       activeSubMenu.focus();
       safeRender();
@@ -2193,11 +2315,9 @@ async function runAutoAction(actionFunction, actionName, network) {
       try {
         for (let i = 1; i <= loopCount; i++) {
           if ((normalizedNetwork === "Sepolia" && swapCancelledSepolia) ||
-              (normalizedNetwork === "Arbitrum Sepolia" && swapCancelledArbitrum) ||
-              (normalizedNetwork === "Plume" && swapCancelledPlume) ||
-              (normalizedNetwork === "BSC" && swapCancelledBSC) ||
-              (normalizedNetwork === "Monad" && swapCancelledMonad) ||
-              (normalizedNetwork === "Base Sepolia" && swapCancelledBaseSepolia)) {
+              (normalizedNetwork === "Sepolia R2" && swapCancelledSepoliaR2) ||
+              (normalizedNetwork === "Pharos" && swapCancelledPharos) ||
+              (normalizedNetwork === "Monad" && swapCancelledMonad)) {
             addLog(`${actionName}: Dihentikan pada Swap ${i}.`, "swap", normalizedNetwork);
             break;
           }
@@ -2213,11 +2333,9 @@ async function runAutoAction(actionFunction, actionName, network) {
             addLog(`Swap ke-${i} selesai. Menunggu ${minutes} menit ${seconds} detik.`, "swap", normalizedNetwork);
             await waitWithCancel(delayTime, "swap", normalizedNetwork);
             if ((normalizedNetwork === "Sepolia" && swapCancelledSepolia) ||
-                (normalizedNetwork === "Arbitrum Sepolia" && swapCancelledArbitrum) ||
-                (normalizedNetwork === "Plume" && swapCancelledPlume) ||
-                (normalizedNetwork === "BSC" && swapCancelledBSC) ||
-                (normalizedNetwork === "Monad" && swapCancelledMonad) ||
-                (normalizedNetwork === "Base Sepolia" && swapCancelledBaseSepolia)) {
+                (normalizedNetwork === "Sepolia R2" && swapCancelledSepoliaR2) ||
+                (normalizedNetwork === "Pharos" && swapCancelledPharos) ||
+                (normalizedNetwork === "Monad" && swapCancelledMonad)) {
               addLog(`${actionName}: Dihentikan saat periode tunggu.`, "swap", normalizedNetwork);
               break;
             }
@@ -2227,30 +2345,22 @@ async function runAutoAction(actionFunction, actionName, network) {
         if (normalizedNetwork === "Sepolia") {
           swapRunningSepolia = false;
           addLog("swapRunningSepolia diatur ke false", "debug", normalizedNetwork);
-        } else if (normalizedNetwork === "Arbitrum Sepolia") {
-          swapRunningArbitrum = false;
-          addLog("swapRunningArbitrum diatur ke false", "debug", normalizedNetwork);
-        } else if (normalizedNetwork === "Plume") {
-          swapRunningPlume = false;
-          addLog("swapRunningPlume diatur ke false", "debug", normalizedNetwork);
-        } else if (normalizedNetwork === "BSC") {
-          swapRunningBSC = false;
-          addLog("swapRunningBSC diatur ke false", "debug", normalizedNetwork);
+        } else if (normalizedNetwork === "Sepolia R2") {
+          swapRunningSepoliaR2 = false;
+          addLog("swapRunningSepoliaR2 diatur ke false", "debug", normalizedNetwork);
+        } else if (normalizedNetwork === "Pharos") {
+          swapRunningPharos = false;
+          addLog("swapRunningPharos diatur ke false", "debug", normalizedNetwork);
         } else if (normalizedNetwork === "Monad") {
           swapRunningMonad = false;
           addLog("swapRunningMonad diatur ke false", "debug", normalizedNetwork);
-        } else if (normalizedNetwork === "Base Sepolia") {
-          swapRunningBaseSepolia = false;
-          addLog("swapRunningBaseSepolia diatur ke false", "debug", normalizedNetwork);
-        }
+        } 
 
         mainMenu.setItems(getMainMenItems());
         activeSubMenu.setItems(normalizedNetwork === "Sepolia" ? getSepoliaSubMenuItems() :
-                              normalizedNetwork === "Arbitrum Sepolia" ? getArbitrumSepoliaSubMenuItems() :
-                              normalizedNetwork === "Plume" ? getPlumeSubMenuItems() :
-                              normalizedNetwork === "BSC" ? getBscSubMenuItems() :
-                              normalizedNetwork === "Monad" ? getMonadSubMenuItems() :
-                              getBaseSepoliaSubMenuItems());
+                              normalizedNetwork === "Sepolia R2" ? getSepoliaR2SubMenuItems() :
+                              normalizedNetwork === "Pharos" ? getPharosSubMenuItems() :
+                              getMonadSubMenuItems());
         safeRender();
       }
       addLog(`${actionName}: Selesai.`, "swap", normalizedNetwork);
@@ -2265,11 +2375,9 @@ function changeRandomAmount(action) {
     if (index >= tokens.length) {
       addLog(`Change Random Amount: Random amounts untuk ${action} diperbarui.`, "success", currentNetwork);
       const activeSubMenu = currentNetwork === "Sepolia" ? sepoliaChangeRandomAmountSubMenu :
-                           currentNetwork === "Arbitrum Sepolia" ? arbitrumSepoliaChangeRandomAmountSubMenu :
-                           currentNetwork === "Plume" ? plumeChangeRandomAmountSubMenu :
-                           currentNetwork === "BSC" ? bscChangeRandomAmountSubMenu :
-                           currentNetwork === "Monad" ? monadChangeRandomAmountSubMenu :
-                           baseSepoliaChangeRandomAmountSubMenu;
+                           currentNetwork === "Sepolia R2" ? r2SepoliaChangeRandomAmountSubMenu :
+                           currentNetwork === "Pharos" ? pharosChangeRandomAmountSubMenu :
+                           monadChangeRandomAmountSubMenu;
       activeSubMenu.show();
       activeSubMenu.focus();
       safeRender();
@@ -2277,17 +2385,15 @@ function changeRandomAmount(action) {
     }
     const token = tokens[index];
     promptBox.setFront();
-    promptBox.input(`Masukkan minimal&maximal ${token} pada ${action} (format: min,max, contoh: 50,200)`, "", (err, value) => {
+    promptBox.input(`Masukkan rentang random amount untuk ${token} pada ${action} (format: min,max, contoh: 50,200)`, "", (err, value) => {
       promptBox.hide();
       safeRender();
       if (err || !value) {
         addLog(`Change Random Amount: Input untuk ${token} pada ${action} dibatalkan.`, "system", currentNetwork);
         const activeSubMenu = currentNetwork === "Sepolia" ? sepoliaChangeRandomAmountSubMenu :
-                             currentNetwork === "Arbitrum Sepolia" ? arbitrumSepoliaChangeRandomAmountSubMenu :
-                             currentNetwork === "Plume" ? plumeChangeRandomAmountSubMenu :
-                             currentNetwork === "BSC" ? bscChangeRandomAmountSubMenu :
-                             currentNetwork === "Monad" ? monadChangeRandomAmountSubMenu :
-                             baseSepoliaChangeRandomAmountSubMenu;
+                             currentNetwork === "Sepolia R2" ? r2SepoliaChangeRandomAmountSubMenu :
+                             currentNetwork === "Pharos" ? pharosChangeRandomAmountSubMenu :
+                             monadChangeRandomAmountSubMenu;
         activeSubMenu.show();
         activeSubMenu.focus();
         safeRender();
@@ -2297,11 +2403,9 @@ function changeRandomAmount(action) {
       if (isNaN(min) || isNaN(max) || min <= 0 || max <= min) {
         addLog(`Change Random Amount: Input tidak valid untuk ${token} pada ${action}. Gunakan format min,max (contoh: 50,200) dengan min > 0 dan max > min.`, "error", currentNetwork);
         const activeSubMenu = currentNetwork === "Sepolia" ? sepoliaChangeRandomAmountSubMenu :
-                             currentNetwork === "Arbitrum Sepolia" ? arbitrumSepoliaChangeRandomAmountSubMenu :
-                             currentNetwork === "Plume" ? plumeChangeRandomAmountSubMenu :
-                             currentNetwork === "BSC" ? bscChangeRandomAmountSubMenu :
-                             currentNetwork === "Monad" ? monadChangeRandomAmountSubMenu :
-                             baseSepoliaChangeRandomAmountSubMenu;
+                             currentNetwork === "Sepolia R2" ? r2SepoliaChangeRandomAmountSubMenu :
+                             currentNetwork === "Pharos" ? pharosChangeRandomAmountSubMenu :
+                             monadChangeRandomAmountSubMenu;
         activeSubMenu.show();
         activeSubMenu.focus();
         safeRender();
@@ -2325,54 +2429,34 @@ mainMenu.on("select", (item) => {
     updateWalletData("Sepolia");
     sepoliaSubMenu.setItems(getSepoliaSubMenuItems());
     sepoliaSubMenu.show();
-    arbitrumSepoliaSubMenu.hide();
-    plumeSubMenu.hide();
-    bscSubMenu.hide();
+    r2SepoliaSubMenu.hide();
+    pharosSubMenu.hide();
     monadSubMenu.hide();
-    baseSepoliaSubMenu.hide();
     sepoliaSubMenu.focus();
     safeRender();
-  } else if (selected === "Arbitrum Sepolia Network") {
-    currentNetwork = "Arbitrum Sepolia";
+  } else if (selected === "Sepolia R2 Network") {
+    currentNetwork = "Sepolia R2";
     welcomeBox.hide();
     walletBox.show();
-    updateWalletData("Arbitrum Sepolia");
-    arbitrumSepoliaSubMenu.setItems(getArbitrumSepoliaSubMenuItems());
-    arbitrumSepoliaSubMenu.show();
+    updateWalletData("Sepolia R2");
+    r2SepoliaSubMenu.setItems(getSepoliaR2SubMenuItems());
+    r2SepoliaSubMenu.show();
     sepoliaSubMenu.hide();
-    plumeSubMenu.hide();
-    bscSubMenu.hide();
+    pharosSubMenu.hide();
     monadSubMenu.hide();
-    baseSepoliaSubMenu.hide();
-    arbitrumSepoliaSubMenu.focus();
+    r2SepoliaSubMenu.focus();
     safeRender();
-  } else if (selected === "Plume Network") {
-    currentNetwork = "Plume";
+  } else if (selected === "Pharos Network") {
+    currentNetwork = "Pharos";
     welcomeBox.hide();
     walletBox.show();
-    updateWalletData("Plume");
-    plumeSubMenu.setItems(getPlumeSubMenuItems());
-    plumeSubMenu.show();
+    updateWalletData("Pharos");
+    pharosSubMenu.setItems(getPharosSubMenuItems());
+    pharosSubMenu.show();
     sepoliaSubMenu.hide();
-    arbitrumSepoliaSubMenu.hide();
-    bscSubMenu.hide();
+    r2SepoliaSubMenu.hide();
     monadSubMenu.hide();
-    baseSepoliaSubMenu.hide();
-    plumeSubMenu.focus();
-    safeRender();
-  } else if (selected === "BSC Network") {
-    currentNetwork = "BSC";
-    welcomeBox.hide();
-    walletBox.show();
-    updateWalletData("BSC");
-    bscSubMenu.setItems(getBscSubMenuItems());
-    bscSubMenu.show();
-    sepoliaSubMenu.hide();
-    arbitrumSepoliaSubMenu.hide();
-    plumeSubMenu.hide();
-    monadSubMenu.hide();
-    baseSepoliaSubMenu.hide();
-    bscSubMenu.focus();
+    pharosSubMenu.focus();
     safeRender();
   } else if (selected === "Monad Network") {
     currentNetwork = "Monad";
@@ -2382,25 +2466,9 @@ mainMenu.on("select", (item) => {
     monadSubMenu.setItems(getMonadSubMenuItems());
     monadSubMenu.show();
     sepoliaSubMenu.hide();
-    arbitrumSepoliaSubMenu.hide();
-    plumeSubMenu.hide();
-    bscSubMenu.hide();
-    baseSepoliaSubMenu.hide();
+    r2SepoliaSubMenu.hide();
+    pharosSubMenu.hide();
     monadSubMenu.focus();
-    safeRender();
-  } else if (selected === "Base Sepolia Network") {
-    currentNetwork = "Base Sepolia";
-    welcomeBox.hide();
-    walletBox.show();
-    updateWalletData("Base Sepolia");
-    baseSepoliaSubMenu.setItems(getBaseSepoliaSubMenuItems());
-    baseSepoliaSubMenu.show();
-    sepoliaSubMenu.hide();
-    arbitrumSepoliaSubMenu.hide();
-    plumeSubMenu.hide();
-    bscSubMenu.hide();
-    monadSubMenu.hide();
-    baseSepoliaSubMenu.focus();
     safeRender();
   } else if (selected === "Claim Faucet") {
     mainMenu.hide();
@@ -2411,16 +2479,14 @@ mainMenu.on("select", (item) => {
   } else if (selected === "Antrian Transaksi") {
     showTransactionQueueMenu();
   } else if (selected === "Stop All Transaction") {
-    if (swapRunningSepolia || swapRunningArbitrum || swapRunningPlume || swapRunningBSC || swapRunningMonad || swapRunningBaseSepolia) {
+    if (swapRunningSepolia || swapRunningSepoliaR2  || swapRunningPharos || swapRunningMonad) {
       swapCancelledSepolia = true;
-      swapCancelledArbitrum = true;
-      swapCancelledPlume = true;
-      swapCancelledBSC = true;
+      swapCancelledSepoliaR2 = true;
+      swapCancelledPharos = true;
       swapCancelledMonad = true;
-      swapCancelledBaseSepolia = true;
-      addLog("Stop All Transaction: Semua transaksi akan di stop.", "system", currentNetwork);
+      addLog("Stop All Transaction: Semua transaksi akan dihentikan.", "system", currentNetwork);
     }
-  } else if (selected === "Clear Transaction ") {
+  } else if (selected === "Clear Transaction Logs") {
     clearTransactionLogs();
   } else if (selected === "Refresh") {
     updateWelcomeBox();
@@ -2434,31 +2500,31 @@ mainMenu.on("select", (item) => {
 
 sepoliaSubMenu.on("select", (item) => {
   const selected = item.getText();
-  if (selected === "Swap R2USD & USDC") {
-    if (swapRunningSepolia) {
-      addLog("Transaksi sedang berjalan di Sepolia. Hentikan transaksi dahulu sayang.", "warning", currentNetwork);
-    } else {
-      runAutoAction(autoSwapR2usdUsdc, "Swap R2USD & USDC", "Sepolia");
-    }
-  } else if (selected === "Stake R2USD & sR2USD") {
+  if (selected === "Auto Swap R2USD & USDC") {
     if (swapRunningSepolia) {
       addLog("Transaksi sedang berjalan di Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoStakeR2usdSr2usd, "Stake R2USD & sR2USD", "Sepolia");
+      runAutoAction(autoSwapR2usdUsdc, "Auto Swap R2USD & USDC", "Sepolia");
     }
-  } else if (selected === "Add LP R2USD & sR2USD") {
+  } else if (selected === "Auto Stake R2USD & sR2USD") {
     if (swapRunningSepolia) {
       addLog("Transaksi sedang berjalan di Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoAddLpR2usdSr2usd, "Add LP R2USD & sR2USD", "Sepolia");
+      runAutoAction(autoStakeR2usdSr2usd, "Auto Stake R2USD & sR2USD", "Sepolia");
     }
-  } else if (selected === "Add LP USDC & R2USD") {
+  } else if (selected === "Auto Add LP R2USD & sR2USD") {
     if (swapRunningSepolia) {
       addLog("Transaksi sedang berjalan di Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoAddLpUsdcR2usd, "Add LP USDC & R2USD", "Sepolia");
+      runAutoAction(autoAddLpR2usdSr2usd, "Auto Add LP R2USD & sR2USD", "Sepolia");
     }
-  } else if (selected === "tes Manual Swap") {
+  } else if (selected === "Auto Add LP USDC & R2USD") {
+    if (swapRunningSepolia) {
+      addLog("Transaksi sedang berjalan di Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
+    } else {
+      runAutoAction(autoAddLpUsdcR2usd, "Auto Add LP USDC & R2USD", "Sepolia");
+    }
+  } else if (selected === "Manual Swap") {
     sepoliaSubMenu.hide();
     sepoliaManualSwapSubMenu.show();
     sepoliaManualSwapSubMenu.focus();
@@ -2473,7 +2539,7 @@ sepoliaSubMenu.on("select", (item) => {
       swapCancelledSepolia = true;
       addLog("Perintah Stop Transaction diterima untuk Sepolia.", "swap", currentNetwork);
     }
-  } else if (selected === "Clear Transaction") {
+  } else if (selected === "Clear Transaction Logs") {
     clearTransactionLogs();
   } else if (selected === "Back To Main Menu") {
     sepoliaSubMenu.hide();
@@ -2490,51 +2556,51 @@ sepoliaSubMenu.on("select", (item) => {
   }
 });
 
-arbitrumSepoliaSubMenu.on("select", (item) => {
+r2SepoliaSubMenu.on("select", (item) => {
   const selected = item.getText();
-  if (selected === "Swap R2USD & USDC") {
-    if (swapRunningArbitrum) {
-      addLog("Transaksi sedang berjalan di Arbitrum Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
+  if (selected === "Auto Swap R2 & USDC") {
+    if (swapRunningSepoliaR2) {
+      addLog("Transaksi sedang berjalan di Sepolia R2. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoSwapR2usdUsdc, "Swap R2USD & USDC", "Arbitrum Sepolia");
+      runAutoAction(autoSwapR2Usdc, "Auto Swap R2 & USDC", "Sepolia R2", "swap");
     }
-  } else if (selected === "Stake R2USD & sR2USD") {
-    if (swapRunningArbitrum) {
-      addLog("Transaksi sedang berjalan di Arbitrum Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
+  } else if (selected === "Auto Swap R2 & R2USD") {
+    if (swapRunningSepoliaR2) {
+      addLog("Transaksi sedang berjalan di Sepolia R2. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoStakeR2usdSr2usd, "Stake R2USD & sR2USD", "Arbitrum Sepolia");
+      runAutoAction(autoSwapR2R2usd, "Auto Swap R2 & R2USD", "Sepolia R2", "swap");
     }
-  } else if (selected === "Add LP R2USD & sR2USD") {
-    if (swapRunningArbitrum) {
-      addLog("Transaksi sedang berjalan di Arbitrum Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
+  } else if (selected === "Auto Add LP R2 & USDC") {
+    if (swapRunningSepoliaR2) {
+      addLog("Transaksi sedang berjalan di Sepolia R2. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoAddLpR2usdSr2usd, "Add LP R2USD & sR2USD", "Arbitrum Sepolia");
+      runAutoAction(autoAddLpR2Usdc, "Auto Add LP R2 & USDC", "Sepolia R2", "single");
     }
-  } else if (selected === "Add LP USDC & R2USD") {
-    if (swapRunningArbitrum) {
-      addLog("Transaksi sedang berjalan di Arbitrum Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
+  } else if (selected === "Auto Add LP R2 & R2USD") {
+    if (swapRunningSepoliaR2) {
+      addLog("Transaksi sedang berjalan di Sepolia R2. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoAddLpUsdcR2usd, "Add LP USDC & R2USD", "Arbitrum Sepolia");
+      runAutoAction(autoAddLpR2R2usd, "Auto Add LP R2 & R2USD", "Sepolia R2", "single");
     }
-  } else if (selected === "tes Manual Swap") {
-    arbitrumSepoliaSubMenu.hide();
-    arbitrumSepoliaManualSwapSubMenu.show();
-    arbitrumSepoliaManualSwapSubMenu.focus();
+  } else if (selected === "Manual Swap") {
+    r2SepoliaSubMenu.hide();
+    r2SepoliaManualSwapSubMenu.show();
+    r2SepoliaManualSwapSubMenu.focus();
     safeRender();
   } else if (selected === "Change Random Amount") {
-    arbitrumSepoliaSubMenu.hide();
-    arbitrumSepoliaChangeRandomAmountSubMenu.show();
-    arbitrumSepoliaChangeRandomAmountSubMenu.focus();
+    r2SepoliaSubMenu.hide();
+    r2SepoliaChangeRandomAmountSubMenu.show();
+    r2SepoliaChangeRandomAmountSubMenu.focus();
     safeRender();
   } else if (selected === "Stop Transaction") {
-    if (swapRunningArbitrum) {
-      swapCancelledArbitrum = true;
-      addLog("Perintah Stop Transaction diterima untuk Arbitrum Sepolia.", "swap", currentNetwork);
+    if (swapRunningSepoliaR2) {
+      swapCancelledSepoliaR2 = true;
+      addLog("Perintah Stop Transaction diterima untuk Sepolia R2.", "swap", currentNetwork);
     }
-  } else if (selected === "Clear Transaction") {
+  } else if (selected === "Clear Transaction Logs") {
     clearTransactionLogs();
   } else if (selected === "Back To Main Menu") {
-    arbitrumSepoliaSubMenu.hide();
+    r2SepoliaSubMenu.hide();
     walletBox.hide();
     welcomeBox.show();
     mainMenu.show();
@@ -2542,108 +2608,48 @@ arbitrumSepoliaSubMenu.on("select", (item) => {
     updateWelcomeBox();
     safeRender();
   } else if (selected === "Refresh") {
-    updateWalletData("Arbitrum Sepolia");
+    updateWalletData("Sepolia R2");
     safeRender();
     addLog("Refreshed", "system", currentNetwork);
   }
 });
 
-plumeSubMenu.on("select", (item) => {
+pharosSubMenu.on("select", (item) => {
   const selected = item.getText();
-  if (selected === "Swap R2USD & USDC") {
-    if (swapRunningPlume) {
-      addLog("Transaksi sedang berjalan di Plume. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
+  if (selected === "Auto Swap R2USD & USDC") {
+    if (swapRunningPharos) {
+      addLog("Transaksi sedang berjalan di Pharos. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoSwapR2usdUsdc, "Swap R2USD & USDC", "Plume");
+      runAutoAction(autoSwapR2usdUsdc, "Auto Swap R2USD & USDC", "Pharos");
     }
-  } else if (selected === "Stake R2USD & sR2USD") {
-    if (swapRunningPlume) {
-      addLog("Transaksi sedang berjalan di Plume. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
+  } else if (selected === "Auto Stake R2USD & sR2USD") {
+    if (swapRunningPharos) {
+      addLog("Transaksi sedang berjalan di Pharos. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoStakeR2usdSr2usd, "Auto Stake R2USD & sR2USD", "Plume");
+      runAutoAction(autoStakeR2usdSr2usd, "Auto Stake R2USD & sR2USD", "Pharos");
     }
-  } else if (selected === "Add LP R2USD & sR2USD") {
-    if (swapRunningPlume) {
-      addLog("Transaksi sedang berjalan di Plume. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
-    } else {
-      runAutoAction(autoAddLpR2usdSr2usd, "Add LP R2USD & sR2USD", "Plume");
-    }
-  } else if (selected === "Add LP USDC & R2USD") {
-    if (swapRunningPlume) {
-      addLog("Transaksi sedang berjalan di Plume. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
-    } else {
-      runAutoAction(autoAddLpUsdcR2usd, "Add LP USDC & R2USD", "Plume");
-    }
-  } else if (selected === "tes Manual Swap") {
-    plumeSubMenu.hide();
-    plumeManualSwapSubMenu.show();
-    plumeManualSwapSubMenu.focus();
+  } else if (selected === "Manual Swap") {
+    pharosSubMenu.hide();
+    pharosManualSwapSubMenu.show();
+    pharosManualSwapSubMenu.focus();
     safeRender();
   } else if (selected === "Change Random Amount") {
-    plumeSubMenu.hide();
-    plumeChangeRandomAmountSubMenu.show();
-    plumeChangeRandomAmountSubMenu.focus();
+    pharosSubMenu.hide();
+    pharosChangeRandomAmountSubMenu.show();
+    pharosChangeRandomAmountSubMenu.focus();
     safeRender();
   } else if (selected === "Stop Transaction") {
-    if (swapRunningPlume) {
-      swapCancelledPlume = true;
-      addLog("Perintah Stop Transaction diterima untuk Plume.", "swap", currentNetwork);
+    if (swapRunningPharos) {
+      swapCancelledPharos = true;
+      addLog("Perintah Stop Transaction diterima untuk Pharos.", "swap", currentNetwork);
     }
-  } else if (selected === "Clear Transaction") {
+  } else if (selected === "Clear Transaction Logs") {
     clearTransactionLogs();
   } else if (selected === "Back To Main Menu") {
-    plumeSubMenu.hide();
-    walletBox.hide();
-    welcomeBox.show();
-    mainMenu.show();
-    mainMenu.focus();
-    updateWelcomeBox();
-    safeRender();
-  } else if (selected === "Refresh") {
-    updateWalletData("Plume");
-    safeRender();
-    addLog("Refreshed", "system", currentNetwork);
-  }
-});
-
-bscSubMenu.on("select", (item) => {
-  const selected = item.getText();
-  if (selected === "Swap R2USD & USDC") {
-    if (swapRunningBSC) {
-      addLog("Transaksi sedang berjalan di BSC. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
-    } else {
-      runAutoAction(autoSwapR2usdUsdc, "Swap R2USD & USDC", "BSC");
-    }
-  } else if (selected === "Stake R2USD & sR2USD") {
-    if (swapRunningBSC) {
-      addLog("Transaksi sedang berjalan di BSC. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
-    } else {
-      runAutoAction(autoStakeR2usdSr2usd, "Stake R2USD & sR2USD", "BSC");
-    }
-  } else if (selected === "tes Manual Swap") {
-    bscSubMenu.hide();
-    bscManualSwapSubMenu.show();
-    bscManualSwapSubMenu.focus();
-    safeRender();
-  } else if (selected === "Change Random Amount") {
-    bscSubMenu.hide();
-    bscChangeRandomAmountSubMenu.show();
-    bscChangeRandomAmountSubMenu.focus();
-    safeRender();
-  } else if (selected === "Stop Transaction") {
-    if (swapRunningBSC) {
-      swapCancelledBSC = true;
-      addLog("Perintah Stop Transaction diterima untuk BSC.", "swap", currentNetwork);
-    }
-  } else if (selected === "Clear Transaction") {
-    clearTransactionLogs();
-  } else if (selected === "Back To Main Menu") {
-    bscSubMenu.hide();
+    pharosSubMenu.hide();
     sepoliaSubMenu.hide();
-    arbitrumSepoliaSubMenu.hide();
-    plumeSubMenu.hide();
+    r2SepoliaSubMenu.hide();
     monadSubMenu.hide();
-    baseSepoliaSubMenu.hide();
     walletBox.hide();
     welcomeBox.show();
     mainMenu.show();
@@ -2651,7 +2657,7 @@ bscSubMenu.on("select", (item) => {
     updateWelcomeBox();
     safeRender();
   } else if (selected === "Refresh") {
-    updateWalletData("BSC");
+    updateWalletData("Pharos");
     safeRender();
     addLog("Refreshed", "system", currentNetwork);
   }
@@ -2659,19 +2665,31 @@ bscSubMenu.on("select", (item) => {
 
 monadSubMenu.on("select", (item) => {
   const selected = item.getText();
-  if (selected === "Swap R2USD & USDC") {
+  if (selected === "Auto Swap R2USD & USDC") {
     if (swapRunningMonad) {
       addLog("Transaksi sedang berjalan di Monad. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoSwapR2usdUsdc, "Swap R2USD & USDC", "Monad");
+      runAutoAction(autoSwapR2usdUsdc, "Auto Swap R2USD & USDC", "Monad");
     }
-  } else if (selected === "Stake R2USD & sR2USD") {
+  } else if (selected === "Auto Stake R2USD & sR2USD") {
     if (swapRunningMonad) {
       addLog("Transaksi sedang berjalan di Monad. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
     } else {
-      runAutoAction(autoStakeR2usdSr2usd, "Stake R2USD & sR2USD", "Monad");
+      runAutoAction(autoStakeR2usdSr2usd, "Auto Stake R2USD & sR2USD", "Monad");
     }
-  } else if (selected === "tes Manual Swap") {
+  } else if (selected === "Auto Add LP R2USD & sR2USD") {
+    if (swapRunningMonad) {
+      addLog("Transaksi sedang berjalan di Monad. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
+    } else {
+      runAutoAction(autoAddLpR2usdSr2usd, "Auto Add LP R2USD & sR2USD", "Monad", "single");
+    }
+  } else if (selected === "Auto Add LP USDC & R2USD") {
+    if (swapRunningMonad) {
+      addLog("Transaksi sedang berjalan di Monad. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
+    } else {
+      runAutoAction(autoAddLpUsdcR2usd, "Auto Add LP USDC & R2USD", "Monad", "single");
+    }
+  } else if (selected === "Manual Swap") {
     monadSubMenu.hide();
     monadManualSwapSubMenu.show();
     monadManualSwapSubMenu.focus();
@@ -2686,14 +2704,13 @@ monadSubMenu.on("select", (item) => {
       swapCancelledMonad = true;
       addLog("Perintah Stop Transaction diterima untuk Monad.", "swap", currentNetwork);
     }
-  } else if (selected === "Clear Transaction") {
+  } else if (selected === "Clear Transaction Logs") {
     clearTransactionLogs();
   } else if (selected === "Back To Main Menu") {
     monadSubMenu.hide();
     sepoliaSubMenu.hide();
-    arbitrumSepoliaSubMenu.hide();
-    plumeSubMenu.hide();
-    bscSubMenu.hide();
+    r2SepoliaSubMenu.hide();
+    pharosSubMenu.hide();
     monadManualSwapSubMenu.hide();
     monadChangeRandomAmountSubMenu.hide();
     walletBox.hide();
@@ -2709,108 +2726,17 @@ monadSubMenu.on("select", (item) => {
   }
 });
 
-baseSepoliaSubMenu.on("select", (item) => {
-  const selected = item.getText();
-  if (selected === "Swap R2USD & USDC") {
-    if (swapRunningBaseSepolia) {
-      addLog("Transaksi sedang berjalan di Base Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
-    } else {
-      runAutoAction(autoSwapR2usdUsdc, "Swap R2USD & USDC", "Base Sepolia");
-    }
-  } else if (selected === "Stake R2USD & sR2USD") {
-    if (swapRunningBaseSepolia) {
-      addLog("Transaksi sedang berjalan di Base Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
-    } else {
-      runAutoAction(autoStakeR2usdSr2usd, "Stake R2USD & sR2USD", "Base Sepolia");
-    }
-  } else if (selected === "tes Manual Swap") {
-    baseSepoliaSubMenu.hide();
-    baseSepoliaManualSwapSubMenu.show();
-    baseSepoliaManualSwapSubMenu.focus();
-    safeRender();
-  } else if (selected === "Change Random Amount") {
-    baseSepoliaSubMenu.hide();
-    baseSepoliaChangeRandomAmountSubMenu.show();
-    baseSepoliaChangeRandomAmountSubMenu.focus();
-    safeRender();
-  } else if (selected === "Stop Transaction") {
-    if (swapRunningBaseSepolia) {
-      swapCancelledBaseSepolia = true;
-      addLog("Perintah Stop Transaction diterima untuk Base Sepolia.", "swap", currentNetwork);
-    }
-  } else if (selected === "Clear Transaction") {
-    clearTransactionLogs();
-  } else if (selected === "Back To Main Menu") {
-    baseSepoliaSubMenu.hide();
-    walletBox.hide();
-    welcomeBox.show();
-    mainMenu.show();
-    mainMenu.focus();
-    updateWelcomeBox();
-    safeRender();
-  } else if (selected === "Refresh") {
-    updateWalletData("Base Sepolia");
-    safeRender();
-    addLog("Refreshed", "system", currentNetwork);
-  }
-});
-
-baseSepoliaSubMenu.on("select", (item) => {
-  const selected = item.getText();
-  if (selected === "Swap R2USD & USDC") {
-    if (swapRunningBaseSepolia) {
-      addLog("Transaksi sedang berjalan di Base Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
-    } else {
-      runAutoAction(autoSwapR2usdUsdc, "Swap R2USD & USDC", "Base Sepolia");
-    }
-  } else if (selected === "Stake R2USD & sR2USD") {
-    if (swapRunningBaseSepolia) {
-      addLog("Transaksi sedang berjalan di Base Sepolia. Hentikan transaksi terlebih dahulu.", "warning", currentNetwork);
-    } else {
-      runAutoAction(autoStakeR2usdSr2usd, "Stake R2USD & sR2USD", "Base Sepolia");
-    }
-  } else if (selected === "tes Manual Swap") {
-    baseSepoliaSubMenu.hide();
-    baseSepoliaManualSwapSubMenu.show();
-    baseSepoliaManualSwapSubMenu.focus();
-    safeRender();
-  } else if (selected === "Change Random Amount") {
-    baseSepoliaSubMenu.hide();
-    baseSepoliaChangeRandomAmountSubMenu.show();
-    baseSepoliaChangeRandomAmountSubMenu.focus();
-    safeRender();
-  } else if (selected === "Stop Transaction") {
-    if (swapRunningBaseSepolia) {
-      swapCancelledBaseSepolia = true;
-      addLog("Perintah Stop Transaction diterima untuk Base Sepolia.", "swap", currentNetwork);
-    }
-  } else if (selected === "Clear Transaction") {
-    clearTransactionLogs();
-  } else if (selected === "Back To Main Menu") {
-    baseSepoliaSubMenu.hide();
-    walletBox.hide();
-    welcomeBox.show();
-    mainMenu.show();
-    mainMenu.focus();
-    updateWelcomeBox();
-    safeRender();
-  } else if (selected === "Refresh") {
-    updateWalletData("Base Sepolia");
-    safeRender();
-    addLog("Refreshed", "system", currentNetwork);
-  }
-});
 
 claimFaucetSubMenu.on("select", (item) => {
   const selected = item.getText();
-  if (selected === "Claim Faucet All Network") {
+  if (selected === "Auto Claim Faucet All Network") {
     if (claimRunning) {
       addLog("Proses claim faucet sedang berjalan. Hentikan proses terlebih dahulu.", "warning");
     } else {
       addLog("Memulai Auto Claim Faucet untuk semua jaringan.", "system");
       claimAllFaucetsWithDelay();
     }
-  } else if (selected === "Daily Claim Faucet All Network") {
+  } else if (selected === "Auto Daily Claim Faucet All Network") {
     if (claimRunning) {
       addLog("Proses claim faucet sedang berjalan. Hentikan proses terlebih dahulu.", "warning");
     } else {
@@ -2829,7 +2755,7 @@ claimFaucetSubMenu.on("select", (item) => {
     const network = selected.replace("Claim Faucet ", "");
     addLog(`Memulai Claim Faucet untuk ${network}.`, "system");
     claimFaucet(network);
-  } else if (selected === "Clear Transaction") {
+  } else if (selected === "Clear Transaction Logs") {
     clearTransactionLogs();
   } else if (selected === "Back to Main Menu") {
     claimFaucetSubMenu.hide();
@@ -2909,72 +2835,110 @@ sepoliaManualSwapSubMenu.on("select", (item) => {
   }
 });
 
-arbitrumSepoliaManualSwapSubMenu.on("select", (item) => {
+r2SepoliaManualSwapSubMenu.on("select", (item) => {
   const selected = item.getText();
-  if (selected === "USDC -> R2USD") {
+  if (selected === "R2 -> USDC") {
     promptBox.setFront();
-    promptBox.input("Masukkan jumlah USDC yang ingin di-swap ke R2USD", "", async (err, value) => {
+    promptBox.input("Masukkan jumlah R2 yang ingin di-swap ke USDC", "", async (err, value) => {
       promptBox.hide();
       safeRender();
       if (err || !value) {
         addLog("Manual Swap: Input tidak valid atau dibatalkan.", "swap", currentNetwork);
         return;
       }
-      const amount = parseFloat(value);
-      if (isNaN(amount) || amount <= 0) {
-        addLog("Manual Swap: Jumlah harus berupa angka lebih besar dari 0.", "swap", currentNetwork);
-        return;
-      }
-      addLog(`Manual Swap: Memulai swap ${amount} USDC ke R2USD.`, "swap", currentNetwork);
+      const amount = ethers.parseUnits(value, 18); 
+      addLog(`Manual Swap: Memulai swap ${value} R2 ke USDC.`, "swap", currentNetwork);
       try {
         await addTransactionToQueue(
-          (nonce, wallet, provider, config) => swapUsdcToR2usd(amount, nonce, wallet, provider, config),
-          `Manual Swap ${amount} USDC to R2USD`,
-          "Arbitrum Sepolia"
+          (nonce, wallet, provider, config) => swapTokens(amount, config.R2_ADDRESS, config.USDC_ADDRESS, nonce, wallet, provider, config),
+          `Manual Swap ${value} R2 to USDC`,
+          "Sepolia R2"
         );
-        await updateWalletData("Arbitrum Sepolia");
-        addLog(`Manual Swap: Swap ${amount} USDC ke R2USD selesai.`, "success", currentNetwork);
+        await updateWalletData("Sepolia R2");
+        addLog(`Manual Swap: Swap ${value} R2 ke USDC selesai.`, "success", currentNetwork);
       } catch (error) {
         addLog(`Manual Swap: Gagal - ${error.message}`, "error", currentNetwork);
       }
     });
-  } else if (selected === "R2USD -> USDC") {
+  } else if (selected === "USDC -> R2") {
     promptBox.setFront();
-    promptBox.input("Masukkan jumlah R2USD yang ingin di-swap ke USDC", "", async (err, value) => {
+    promptBox.input("Masukkan jumlah USDC yang ingin di-swap ke R2", "", async (err, value) => {
       promptBox.hide();
       safeRender();
       if (err || !value) {
         addLog("Manual Swap: Input tidak valid atau dibatalkan.", "swap", currentNetwork);
         return;
       }
-      const amount = parseFloat(value);
-      if (isNaN(amount) || amount <= 0) {
-        addLog("Manual Swap: Jumlah harus berupa angka lebih besar dari 0.", "swap", currentNetwork);
-        return;
-      }
-      addLog(`Manual Swap: Memulai swap ${amount} R2USD ke USDC.`, "swap", currentNetwork);
+      const amount = ethers.parseUnits(value, 6);
+      addLog(`Manual Swap: Memulai swap ${value} USDC ke R2.`, "swap", currentNetwork);
       try {
         await addTransactionToQueue(
-          (nonce, wallet, provider, config) => swapR2usdToUsdc(amount, nonce, wallet, provider, config),
-          `Manual Swap ${amount} R2USD to USDC`,
-          "Arbitrum Sepolia"
+          (nonce, wallet, provider, config) => swapTokens(amount, config.USDC_ADDRESS, config.R2_ADDRESS, nonce, wallet, provider, config),
+          `Manual Swap ${value} USDC to R2`,
+          "Sepolia R2"
         );
-        await updateWalletData("Arbitrum Sepolia");
-        addLog(`Manual Swap: Swap ${amount} R2USD ke USDC selesai.`, "success", currentNetwork);
+        await updateWalletData("Sepolia R2");
+        addLog(`Manual Swap: Swap ${value} USDC ke R2 selesai.`, "success", currentNetwork);
       } catch (error) {
         addLog(`Manual Swap: Gagal - ${error.message}`, "error", currentNetwork);
       }
     });
-  } else if (selected === "Back To Arbitrum Sepolia Network Menu") {
-    arbitrumSepoliaManualSwapSubMenu.hide();
-    arbitrumSepoliaSubMenu.setItems(getArbitrumSepoliaSubMenuItems());
-    arbitrumSepoliaSubMenu.show();
-    arbitrumSepoliaSubMenu.focus();
+  } else if (selected === "R2 -> R2USD") {
+    promptBox.setFront();
+    promptBox.input("Masukkan jumlah R2 yang ingin di-swap ke R2USD", "", async (err, value) => {
+      promptBox.hide();
+      safeRender();
+      if (err || !value) {
+        addLog("Manual Swap: Input tidak valid atau dibatalkan.", "swap", currentNetwork);
+        return;
+      }
+      const amount = ethers.parseUnits(value, 18); 
+      addLog(`Manual Swap: Memulai swap ${value} R2 ke R2USD.`, "swap", currentNetwork);
+      try {
+        await addTransactionToQueue(
+          (nonce, wallet, provider, config) => swapTokens(amount, config.R2_ADDRESS, config.R2USD_ADDRESS, nonce, wallet, provider, config),
+          `Manual Swap ${value} R2 to R2USD`,
+          "Sepolia R2"
+        );
+        await updateWalletData("Sepolia R2");
+        addLog(`Manual Swap: Swap ${value} R2 ke R2USD selesai.`, "success", currentNetwork);
+      } catch (error) {
+        addLog(`Manual Swap: Gagal - ${error.message}`, "error", currentNetwork);
+      }
+    });
+  } else if (selected === "R2USD -> R2") {
+    promptBox.setFront();
+    promptBox.input("Masukkan jumlah R2USD yang ingin di-swap ke R2", "", async (err, value) => {
+      promptBox.hide();
+      safeRender();
+      if (err || !value) {
+        addLog("Manual Swap: Input tidak valid atau dibatalkan.", "swap", currentNetwork);
+        return;
+      }
+      const amount = ethers.parseUnits(value, 6); 
+      addLog(`Manual Swap: Memulai swap ${value} R2USD ke R2.`, "swap", currentNetwork);
+      try {
+        await addTransactionToQueue(
+          (nonce, wallet, provider, config) => swapTokens(amount, config.R2USD_ADDRESS, config.R2_ADDRESS, nonce, wallet, provider, config),
+          `Manual Swap ${value} R2USD to R2`,
+          "Sepolia R2"
+        );
+        await updateWalletData("Sepolia R2");
+        addLog(`Manual Swap: Swap ${value} R2USD ke R2 selesai.`, "success", currentNetwork);
+      } catch (error) {
+        addLog(`Manual Swap: Gagal - ${error.message}`, "error", currentNetwork);
+      }
+    });
+  } else if (selected === "Back To Sepolia R2 Network Menu") {
+    r2SepoliaManualSwapSubMenu.hide();
+    r2SepoliaSubMenu.setItems(getSepoliaR2SubMenuItems());
+    r2SepoliaSubMenu.show();
+    r2SepoliaSubMenu.focus();
     safeRender();
   }
 });
 
-plumeManualSwapSubMenu.on("select", (item) => {
+pharosManualSwapSubMenu.on("select", (item) => {
   const selected = item.getText();
   if (selected === "USDC -> R2USD") {
     promptBox.setFront();
@@ -2995,9 +2959,9 @@ plumeManualSwapSubMenu.on("select", (item) => {
         await addTransactionToQueue(
           (nonce, wallet, provider, config) => swapUsdcToR2usd(amount, nonce, wallet, provider, config),
           `Manual Swap ${amount} USDC to R2USD`,
-          "Plume"
+          "Pharos"
         );
-        await updateWalletData("Plume");
+        await updateWalletData("Pharos");
         addLog(`Manual Swap: Swap ${amount} USDC ke R2USD selesai.`, "success", currentNetwork);
       } catch (error) {
         addLog(`Manual Swap: Gagal - ${error.message}`, "error", currentNetwork);
@@ -3020,86 +2984,21 @@ plumeManualSwapSubMenu.on("select", (item) => {
       addLog(`Manual Swap: Memulai swap ${amount} R2USD ke USDC.`, "swap", currentNetwork);
       try {
         await addTransactionToQueue(
-          (nonce, wallet, provider, config) => swapR2usdToUsdc(amount, nonce, wallet, provider, config),
+          (nonce, wallet, provider, config) => swapR2usdToUsdC(amount, nonce, wallet, provider, config),
           `Manual Swap ${amount} R2USD to USDC`,
-          "Plume"
+          "Pharos"
         );
-        await updateWalletData("Plume");
+        await updateWalletData("Pharos");
         addLog(`Manual Swap: Swap ${amount} R2USD ke USDC selesai.`, "success", currentNetwork);
       } catch (error) {
         addLog(`Manual Swap: Gagal - ${error.message}`, "error", currentNetwork);
       }
     });
-  } else if (selected === "Back To Plume Network Menu") {
-    plumeManualSwapSubMenu.hide();
-    plumeSubMenu.setItems(getPlumeSubMenuItems());
-    plumeSubMenu.show();
-    plumeSubMenu.focus();
-    safeRender();
-  }
-});
-
-bscManualSwapSubMenu.on("select", (item) => {
-  const selected = item.getText();
-  if (selected === "USDC -> R2USD") {
-    promptBox.setFront();
-    promptBox.input("Masukkan jumlah USDC yang ingin di-swap ke R2USD", "", async (err, value) => {
-      promptBox.hide();
-      safeRender();
-      if (err || !value) {
-        addLog("Manual Swap: Input tidak valid atau dibatalkan.", "swap", currentNetwork);
-        return;
-      }
-      const amount = parseFloat(value);
-      if (isNaN(amount) || amount <= 0) {
-        addLog("Manual Swap: Jumlah harus berupa angka lebih besar dari 0.", "swap", currentNetwork);
-        return;
-      }
-      addLog(`Manual Swap: Memulai swap ${amount} USDC ke R2USD.`, "swap", currentNetwork);
-      try {
-        await addTransactionToQueue(
-          (nonce, wallet, provider, config) => swapUsdcToR2usd(amount, nonce, wallet, provider, config),
-          `Manual Swap ${amount} USDC to R2USD`,
-          "BSC"
-        );
-        await updateWalletData("BSC");
-        addLog(`Manual Swap: Swap ${amount} USDC ke R2USD selesai.`, "success", currentNetwork);
-      } catch (error) {
-        addLog(`Manual Swap: Gagal - ${error.message}`, "error", currentNetwork);
-      }
-    });
-  } else if (selected === "R2USD -> USDC") {
-    promptBox.setFront();
-    promptBox.input("Masukkan jumlah R2USD yang ingin di-swap ke USDC", "", async (err, value) => {
-      promptBox.hide();
-      safeRender();
-      if (err || !value) {
-        addLog("Manual Swap: Input tidak valid atau dibatalkan.", "swap", currentNetwork);
-        return;
-      }
-      const amount = parseFloat(value);
-      if (isNaN(amount) || amount <= 0) {
-        addLog("Manual Swap: Jumlah harus berupa angka lebih besar dari 0.", "swap", currentNetwork);
-        return;
-      }
-      addLog(`Manual Swap: Memulai swap ${amount} R2USD ke USDC.`, "swap", currentNetwork);
-      try {
-        await addTransactionToQueue(
-          (nonce, wallet, provider, config) => swapR2usdToUsdcBSC(amount, nonce, wallet, provider, config),
-          `Manual Swap ${amount} R2USD to USDC`,
-          "BSC"
-        );
-        await updateWalletData("BSC");
-        addLog(`Manual Swap: Swap ${amount} R2USD ke USDC selesai.`, "success", currentNetwork);
-      } catch (error) {
-        addLog(`Manual Swap: Gagal - ${error.message}`, "error", currentNetwork);
-      }
-    });
-  } else if (selected === "Back To BSC Network Menu") {
-    bscManualSwapSubMenu.hide();
-    bscSubMenu.setItems(getBscSubMenuItems());
-    bscSubMenu.show();
-    bscSubMenu.focus();
+  } else if (selected === "Back To Pharos Network Menu") {
+    pharosManualSwapSubMenu.hide();
+    pharosSubMenu.setItems(getPharosSubMenuItems());
+    pharosSubMenu.show();
+    pharosSubMenu.focus();
     safeRender();
   }
 });
@@ -3150,7 +3049,7 @@ monadManualSwapSubMenu.on("select", (item) => {
       addLog(`Manual Swap: Memulai swap ${amount} R2USD ke USDC.`, "swap", currentNetwork);
       try {
         await addTransactionToQueue(
-          (nonce, wallet, provider, config) => swapR2usdToUsdcBSC(amount, nonce, wallet, provider, config),
+          (nonce, wallet, provider, config) => swapR2usdToUsdC(amount, nonce, wallet, provider, config),
           `Manual Swap ${amount} R2USD to USDC`,
           "Monad"
         );
@@ -3169,70 +3068,6 @@ monadManualSwapSubMenu.on("select", (item) => {
   }
 });
 
-baseSepoliaManualSwapSubMenu.on("select", (item) => {
-  const selected = item.getText();
-  if (selected === "USDC -> R2USD") {
-    promptBox.setFront();
-    promptBox.input("Masukkan jumlah USDC yang ingin di-swap ke R2USD", "", async (err, value) => {
-      promptBox.hide();
-      safeRender();
-      if (err || !value) {
-        addLog("Manual Swap: Input tidak valid atau dibatalkan.", "swap", currentNetwork);
-        return;
-      }
-      const amount = parseFloat(value);
-      if (isNaN(amount) || amount <= 0) {
-        addLog("Manual Swap: Jumlah harus berupa angka lebih besar dari 0.", "swap", currentNetwork);
-        return;
-      }
-      addLog(`Manual Swap: Memulai swap ${amount} USDC ke R2USD.`, "swap", currentNetwork);
-      try {
-        await addTransactionToQueue(
-          (nonce, wallet, provider, config) => swapUsdcToR2usd(amount, nonce, wallet, provider, config),
-          `Manual Swap ${amount} USDC to R2USD`,
-          "Base Sepolia"
-        );
-        await updateWalletData("Base Sepolia");
-        addLog(`Manual Swap: Swap ${amount} USDC ke R2USD selesai.`, "success", currentNetwork);
-      } catch (error) {
-        addLog(`Manual Swap: Gagal - ${error.message}`, "error", currentNetwork);
-      }
-    });
-  } else if (selected === "R2USD -> USDC") {
-    promptBox.setFront();
-    promptBox.input("Masukkan jumlah R2USD yang ingin di-swap ke USDC", "", async (err, value) => {
-      promptBox.hide();
-      safeRender();
-      if (err || !value) {
-        addLog("Manual Swap: Input tidak valid atau dibatalkan.", "swap", currentNetwork);
-        return;
-      }
-      const amount = parseFloat(value);
-      if (isNaN(amount) || amount <= 0) {
-        addLog("Manual Swap: Jumlah harus berupa angka lebih besar dari 0.", "swap", currentNetwork);
-        return;
-      }
-      addLog(`Manual Swap: Memulai swap ${amount} R2USD ke USDC.`, "swap", currentNetwork);
-      try {
-        await addTransactionToQueue(
-          (nonce, wallet, provider, config) => swapR2usdToUsdcBSC(amount, nonce, wallet, provider, config),
-          `Manual Swap ${amount} R2USD to USDC`,
-          "Base Sepolia"
-        );
-        await updateWalletData("Base Sepolia");
-        addLog(`Manual Swap: Swap ${amount} R2USD ke USDC selesai.`, "success", currentNetwork);
-      } catch (error) {
-        addLog(`Manual Swap: Gagal - ${error.message}`, "error", currentNetwork);
-      }
-    });
-  } else if (selected === "Back To Base Sepolia Network Menu") {
-    baseSepoliaManualSwapSubMenu.hide();
-    baseSepoliaSubMenu.setItems(getBaseSepoliaSubMenuItems());
-    baseSepoliaSubMenu.show();
-    baseSepoliaSubMenu.focus();
-    safeRender();
-  }
-});
 
 sepoliaChangeRandomAmountSubMenu.on("select", (item) => {
   const selected = item.getText();
@@ -3247,41 +3082,29 @@ sepoliaChangeRandomAmountSubMenu.on("select", (item) => {
   }
 });
 
-arbitrumSepoliaChangeRandomAmountSubMenu.on("select", (item) => {
+r2SepoliaChangeRandomAmountSubMenu.on("select", (item) => {
   const selected = item.getText();
   if (selected === "SWAP_R2USD_USDC") {
     changeRandomAmount("SWAP_R2USD_USDC");
-  } else if (selected === "Back To Arbitrum Sepolia Network Menu") {
-    arbitrumSepoliaChangeRandomAmountSubMenu.hide();
-    arbitrumSepoliaSubMenu.setItems(getArbitrumSepoliaSubMenuItems());
-    arbitrumSepoliaSubMenu.show();
-    arbitrumSepoliaSubMenu.focus();
+  } else if (selected === "Back To Sepolia R2 Network Menu") {
+    r2SepoliaChangeRandomAmountSubMenu.hide();
+    r2SepoliaSubMenu.setItems(getSepoliaR2SubMenuItems());
+    r2SepoliaSubMenu.show();
+    r2SepoliaSubMenu.focus();
     safeRender();
   }
 });
 
-plumeChangeRandomAmountSubMenu.on("select", (item) => {
-  const selected = item.getText();
-  if (selected === "SWAP_R2USD_USDC") {
-    changeRandomAmount("SWAP_R2USD_USDC");
-  } else if (selected === "Back To Plume Network Menu") {
-    plumeChangeRandomAmountSubMenu.hide();
-    plumeSubMenu.setItems(getPlumeSubMenuItems());
-    plumeSubMenu.show();
-    plumeSubMenu.focus();
-    safeRender();
-  }
-});
 
-bscChangeRandomAmountSubMenu.on("select", (item) => {
+pharosChangeRandomAmountSubMenu.on("select", (item) => {
   const selected = item.getText();
   if (selected === "SWAP_R2USD_USDC") {
     changeRandomAmount("SWAP_R2USD_USDC");
-  } else if (selected === "Back To BSC Network Menu") {
-    bscChangeRandomAmountSubMenu.hide();
-    bscSubMenu.setItems(getBscSubMenuItems());
-    bscSubMenu.show();
-    bscSubMenu.focus();
+  } else if (selected === "Back To Pharos Network Menu") {
+    pharosChangeRandomAmountSubMenu.hide();
+    pharosSubMenu.setItems(getPharosSubMenuItems());
+    pharosSubMenu.show();
+    pharosSubMenu.focus();
     safeRender();
   }
 });
@@ -3299,19 +3122,6 @@ monadChangeRandomAmountSubMenu.on("select", (item) => {
   }
 });
 
-baseSepoliaChangeRandomAmountSubMenu.on("select", (item) => {
-  const selected = item.getText();
-  if (selected === "SWAP_R2USD_USDC") {
-    changeRandomAmount("SWAP_R2USD_USDC");
-  } else if (selected === "Back To Base Sepolia Network Menu") {
-    baseSepoliaChangeRandomAmountSubMenu.hide();
-    baseSepoliaSubMenu.setItems(getBaseSepoliaSubMenuItems());
-    baseSepoliaSubMenu.show();
-    baseSepoliaSubMenu.focus();
-    safeRender();
-  }
-});
-
 screen.key(["escape", "q", "C-c"], () => {
   process.exit(0);
 });
@@ -3320,5 +3130,5 @@ screen.key(["C-down"], () => { logsBox.scroll(1); safeRender(); });
 
 safeRender();
 mainMenu.focus();
-addLog("contact Telegram @Annisaazzahra123!!", "system");
+addLog("contact Telegram @AnnisaAzzahra123!!", "system");
 updateWelcomeBox();
